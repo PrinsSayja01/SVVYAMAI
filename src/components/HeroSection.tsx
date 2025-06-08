@@ -4,11 +4,20 @@ import { ArrowRight, Users, Clock } from 'lucide-react';
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center hero-gradient overflow-hidden">
-      {/* Background Elements */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-accent/10"></div>
-      <div className="absolute top-20 left-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl animate-float"></div>
-      <div className="absolute bottom-20 right-10 w-96 h-96 bg-accent/10 rounded-full blur-3xl animate-float" style={{ animationDelay: '1s' }}></div>
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Spline 3D Background */}
+      <div className="absolute inset-0 w-full h-full">
+        <iframe 
+          src='https://my.spline.design/interactiveaistartupheropage-FDFstr0gJO2xsGCOUcSTDSiW/' 
+          frameBorder='0' 
+          width='100%' 
+          height='100%'
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+      </div>
+
+      {/* Dark overlay for better text readability */}
+      <div className="absolute inset-0 bg-background/60 backdrop-blur-sm"></div>
 
       <div className="container-width section-padding relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -74,7 +83,7 @@ const HeroSection = () => {
 
           {/* Visual Element */}
           <div className="relative animate-fade-up" style={{ animationDelay: '0.3s' }}>
-            <div className="relative bg-card rounded-2xl p-8 border border-border shadow-2xl">
+            <div className="relative bg-card/80 backdrop-blur-sm rounded-2xl p-8 border border-border shadow-2xl">
               {/* Dashboard Preview */}
               <div className="space-y-4">
                 <div className="flex items-center justify-between mb-6">
@@ -86,7 +95,7 @@ const HeroSection = () => {
                 </div>
 
                 <div className="grid grid-cols-2 gap-4">
-                  <div className="bg-background rounded-lg p-4">
+                  <div className="bg-background/80 backdrop-blur-sm rounded-lg p-4">
                     <div className="flex items-center space-x-2 mb-2">
                       <Users className="h-5 w-5 text-primary" />
                       <span className="text-sm font-medium">New Leads</span>
@@ -95,7 +104,7 @@ const HeroSection = () => {
                     <div className="text-xs text-foreground/60">+23% this week</div>
                   </div>
 
-                  <div className="bg-background rounded-lg p-4">
+                  <div className="bg-background/80 backdrop-blur-sm rounded-lg p-4">
                     <div className="flex items-center space-x-2 mb-2">
                       <Clock className="h-5 w-5 text-accent" />
                       <span className="text-sm font-medium">Response Time</span>
