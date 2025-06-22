@@ -105,18 +105,38 @@ const FAQSection = () => {
 
           {/* Still have questions CTA */}
           <div className="text-center mt-12 animate-fade-up" style={{ animationDelay: '0.8s' }}>
-            <div className="bg-gradient-primary rounded-2xl p-8 text-background">
-              <h3 className="text-2xl font-bold mb-4">Still Have Questions?</h3>
-              <p className="text-lg opacity-90 mb-6">
-                Schedule a free strategy call to discuss your specific situation and see if we're the right fit.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button className="bg-background text-primary hover:bg-background/90 px-8 py-3 rounded-lg font-semibold transition-colors">
-                  Schedule Free Call
-                </button>
-                <button className="border border-background/20 hover:bg-background/10 px-8 py-3 rounded-lg font-semibold transition-colors">
-                  Send Us a Message
-                </button>
+            <div className="bg-gradient-primary rounded-2xl p-8 text-background relative overflow-hidden">
+              {/* Video Background */}
+              <div className="absolute inset-0 w-full h-full">
+                <video 
+                  autoPlay 
+                  muted 
+                  loop 
+                  playsInline
+                  className="absolute inset-0 w-full h-full object-cover opacity-20"
+                >
+                  <source src="https://videos.pexels.com/video-files/3129671/3129671-uhd_2560_1440_30fps.mp4" type="video/mp4" />
+                  <source src="https://videos.pexels.com/video-files/3195394/3195394-uhd_2560_1440_25fps.mp4" type="video/mp4" />
+                </video>
+              </div>
+
+              {/* Background Elements */}
+              <div className="absolute top-4 left-4 w-16 h-16 bg-background/10 rounded-full blur-xl"></div>
+              <div className="absolute bottom-4 right-4 w-20 h-20 bg-background/10 rounded-full blur-xl"></div>
+              
+              <div className="relative z-10">
+                <h3 className="text-2xl font-bold mb-4">Still Have Questions?</h3>
+                <p className="text-lg opacity-90 mb-6">
+                  Schedule a free strategy call to discuss your specific situation and see if we're the right fit.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <button className="bg-background text-primary hover:bg-background/90 px-8 py-3 rounded-lg font-semibold transition-colors">
+                    Schedule Free Call
+                  </button>
+                  <button className="border border-background/20 hover:bg-background/10 px-8 py-3 rounded-lg font-semibold transition-colors">
+                    Send Us a Message
+                  </button>
+                </div>
               </div>
             </div>
           </div>
