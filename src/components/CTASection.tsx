@@ -10,6 +10,20 @@ const CTASection = () => {
         {/* Main CTA */}
         <div className="text-center mb-16 animate-fade-up">
           <div className="bg-gradient-primary rounded-3xl p-12 md:p-16 text-background relative overflow-hidden">
+            {/* Video Background */}
+            <div className="absolute inset-0 w-full h-full">
+              <video 
+                autoPlay 
+                muted 
+                loop 
+                playsInline
+                className="absolute inset-0 w-full h-full object-cover opacity-20"
+              >
+                <source src="https://videos.pexels.com/video-files/3129671/3129671-uhd_2560_1440_30fps.mp4" type="video/mp4" />
+                <source src="https://videos.pexels.com/video-files/3195394/3195394-uhd_2560_1440_25fps.mp4" type="video/mp4" />
+              </video>
+            </div>
+
             {/* Background Elements */}
             <div className="absolute top-10 left-10 w-20 h-20 bg-background/10 rounded-full blur-xl"></div>
             <div className="absolute bottom-10 right-10 w-32 h-32 bg-background/10 rounded-full blur-xl"></div>
