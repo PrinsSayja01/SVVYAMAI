@@ -44,7 +44,7 @@ const CTASection = () => {
 
               {/* Primary CTA */}
               <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-                <Button className="bg-background text-primary hover:bg-background/90 px-8 py-4 text-lg font-semibold text-center group">
+                <Button className="bg-agency-orange text-background hover:bg-agency-orange/90 px-8 py-4 text-lg font-semibold text-center group">
                   Claim Your Spot Now
                   <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </Button>
@@ -75,43 +75,43 @@ const CTASection = () => {
         {/* Contact Options */}
         <div className="grid md:grid-cols-3 gap-8 mb-16">
           <Card className="bg-card border-border p-8 text-center hover:scale-105 transition-all duration-300 hover:shadow-xl animate-fade-up" style={{ animationDelay: '0.2s' }}>
-            <div className="w-16 h-16 bg-primary/20 rounded-2xl flex items-center justify-center mx-auto mb-6">
-              <Calendar className="w-8 h-8 text-primary" />
+            <div className="w-16 h-16 bg-agency-purple/20 rounded-2xl flex items-center justify-center mx-auto mb-6">
+              <Calendar className="w-8 h-8 text-agency-purple" />
             </div>
             <h3 className="text-xl font-bold mb-4">Book a Strategy Call</h3>
             <p className="text-foreground/80 mb-6">
               Free 30-minute consultation to discuss your lead generation goals and see if we're the right fit.
             </p>
-            <Button className="w-full btn-primary">
+            <Button className="w-full bg-agency-purple hover:bg-agency-purple/90 text-background">
               Schedule Call
             </Button>
           </Card>
 
           <Card className="bg-card border-border p-8 text-center hover:scale-105 transition-all duration-300 hover:shadow-xl animate-fade-up" style={{ animationDelay: '0.4s' }}>
-            <div className="w-16 h-16 bg-accent/20 rounded-2xl flex items-center justify-center mx-auto mb-6">
-              <Phone className="w-8 h-8 text-accent" />
+            <div className="w-16 h-16 bg-agency-orange/20 rounded-2xl flex items-center justify-center mx-auto mb-6">
+              <Phone className="w-8 h-8 text-agency-orange" />
             </div>
             <h3 className="text-xl font-bold mb-4">Call Us Direct</h3>
             <p className="text-foreground/80 mb-6">
               Speak with our team immediately. We're standing by to answer your questions and get you started.
             </p>
-            <div className="text-2xl font-bold gradient-text mb-4">
+            <div className="text-2xl font-bold text-agency-orange mb-4">
               (555) 123-LEADS
             </div>
-            <Button variant="outline" className="w-full">
+            <Button variant="outline" className="w-full border-agency-orange text-agency-orange hover:bg-agency-orange/10">
               Call Now
             </Button>
           </Card>
 
           <Card className="bg-card border-border p-8 text-center hover:scale-105 transition-all duration-300 hover:shadow-xl animate-fade-up" style={{ animationDelay: '0.6s' }}>
-            <div className="w-16 h-16 bg-agency-purple/20 rounded-2xl flex items-center justify-center mx-auto mb-6">
-              <ArrowRight className="w-8 h-8 text-agency-purple" />
+            <div className="w-16 h-16 bg-agency-blue/20 rounded-2xl flex items-center justify-center mx-auto mb-6">
+              <ArrowRight className="w-8 h-8 text-agency-blue" />
             </div>
             <h3 className="text-xl font-bold mb-4">Fast Track Application</h3>
             <p className="text-foreground/80 mb-6">
               Skip the wait. Fill out our priority application and we'll contact you within 24 hours.
             </p>
-            <Button className="w-full bg-agency-purple hover:bg-agency-purple/90 text-background">
+            <Button className="w-full bg-agency-blue hover:bg-agency-blue/90 text-background">
               Apply Now
             </Button>
           </Card>
@@ -125,7 +125,7 @@ const CTASection = () => {
           <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             <div className="text-left">
               <h4 className="text-xl font-semibold mb-4 flex items-center">
-                <Shield className="w-6 h-6 text-primary mr-3" />
+                <Shield className="w-6 h-6 text-agency-green mr-3" />
                 90-Day Guarantee
               </h4>
               <p className="text-foreground/80">
@@ -135,7 +135,7 @@ const CTASection = () => {
             </div>
             <div className="text-left">
               <h4 className="text-xl font-semibold mb-4 flex items-center">
-                <Star className="w-6 h-6 text-accent mr-3" />
+                <Star className="w-6 h-6 text-agency-orange mr-3" />
                 Success Guarantee
               </h4>
               <p className="text-foreground/80">
@@ -156,7 +156,7 @@ const CTASection = () => {
               Every day you wait is another day your competitors are getting ahead. 
               The businesses that act fast are the ones that dominate their markets.
             </p>
-            <Button className="btn-primary">
+            <Button className="bg-agency-purple hover:bg-agency-purple/90 text-background">
               Secure Your Spot Today
             </Button>
           </div>

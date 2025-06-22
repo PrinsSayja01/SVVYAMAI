@@ -1,4 +1,3 @@
-
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Users, Calendar, Search } from 'lucide-react';
@@ -115,7 +114,7 @@ const ServicesSection = () => {
               Let's create a custom system that captures, nurtures, and converts high-quality leads for your business.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button className="bg-background text-primary hover:bg-background/90 px-8 py-4 text-lg font-semibold">
+              <Button className="bg-agency-blue text-background hover:bg-agency-blue/90 px-8 py-4 text-lg font-semibold">
                 Get Started Today
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
