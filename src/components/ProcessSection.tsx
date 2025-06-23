@@ -1,4 +1,3 @@
-
 import { Card } from '@/components/ui/card';
 import { Search, Users, Calendar, ArrowRight } from 'lucide-react';
 
@@ -16,9 +15,9 @@ const ProcessSection = () => {
         "Current funnel audit",
         "Goal setting & KPI definition"
       ],
-      color: "text-agency-green",
-      bgColor: "bg-agency-green/10",
-      borderColor: "border-agency-green/30"
+      color: "text-agency-blue",
+      bgColor: "bg-agency-blue/10",
+      borderColor: "border-agency-blue/30"
     },
     {
       number: "02",

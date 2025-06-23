@@ -56,7 +56,7 @@ export default {
 				agency: {
 					orange: 'hsl(var(--agency-orange))',
 					blue: 'hsl(var(--agency-blue))',
-					green: 'hsl(var(--agency-green))',
+					green: 'hsl(var(--agency-blue))',
 					purple: 'hsl(var(--agency-purple))',
 				}
 			},

@@ -1,3 +1,4 @@
+
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Users, Calendar, Search } from 'lucide-react';
@@ -15,9 +16,9 @@ const ServicesSection = () => {
         "Lead scoring and qualification",
         "CRM integration and management"
       ],
-      color: "text-agency-green",
-      bgColor: "bg-agency-green/10",
-      borderColor: "border-agency-green/30"
+      color: "text-agency-blue",
+      bgColor: "bg-agency-blue/10",
+      borderColor: "border-agency-blue/30"
     },
     {
       icon: Calendar,
