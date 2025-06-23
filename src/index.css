@@ -1,4 +1,3 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -16,7 +15,7 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 220 100% 25%;
+    --primary: 220 100% 35%;
     --primary-foreground: 0 0% 100%;
 
     --secondary: 210 40% 95%;
@@ -25,7 +24,7 @@
     --muted: 210 40% 95%;
     --muted-foreground: 215 20.2% 35%;
 
-    --accent: 220 100% 15%;
+    --accent: 220 100% 25%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 62.8% 30.6%;
@@ -33,18 +32,18 @@
 
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 220 100% 25%;
+    --ring: 220 100% 35%;
 
     --radius: 0.75rem;
 
     /* Custom agency colors */
     --agency-orange: 25 95% 53%;
-    --agency-blue: 220 100% 25%;
-    --agency-green: 220 100% 25%;
-    --agency-purple: 220 100% 15%;
+    --agency-blue: 220 100% 35%;
+    --agency-green: 220 100% 35%;
+    --agency-purple: 220 100% 25%;
     
     /* Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(220 100% 25%) 0%, hsl(220 100% 15%) 100%);
+    --gradient-primary: linear-gradient(135deg, hsl(220 100% 35%) 0%, hsl(220 100% 25%) 100%);
     --gradient-hero: linear-gradient(135deg, hsl(0 0% 100%) 0%, hsl(210 40% 98%) 100%);
   }
 
