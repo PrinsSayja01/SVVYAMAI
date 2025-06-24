@@ -69,53 +69,53 @@ const TestimonialsSection = () => {
   const currentTestimonial = testimonials[currentIndex];
 
   return (
-    <section id="testimonials" className="py-24 bg-card/30">
+    <section id="testimonials" className="py-24 morphing-bg particle-system">
       <div className="container-width section-padding">
-        <div className="text-center mb-16 animate-fade-up">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+        <div className="text-center mb-16 animate-fade-up magnetic-field">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-reveal magnetic-hover">
             What Our Clients Are Saying
           </h2>
-          <p className="text-xl text-foreground/80 max-w-2xl mx-auto">
+          <p className="text-xl text-foreground/80 max-w-2xl mx-auto breathing animate-intelligent-hover">
             Real results from real businesses. See how we've helped companies transform their lead generation.
           </p>
         </div>
 
         <div className="max-w-4xl mx-auto">
-          <Card className="bg-card border-border p-8 md:p-12 relative animate-scale-in">
+          <Card className="glassmorphism border-border p-8 md:p-12 relative smart-hover interactive-glow magnetic-field fractal-bg">
             {/* Quote Marks */}
-            <div className="absolute top-6 left-6 text-6xl text-primary/20 font-serif">"</div>
+            <div className="absolute top-6 left-6 text-6xl text-primary/20 font-serif floating-element">"</div>
             
             {/* Content */}
             <div className="relative z-10">
               {/* Stars */}
               <div className="flex justify-center mb-6">
                 {[...Array(currentTestimonial.rating)].map((_, i) => (
-                  <Star key={i} className="w-6 h-6 fill-primary text-primary" />
+                  <Star key={i} className="w-6 h-6 fill-primary text-primary smart-pulse floating-element" style={{ animationDelay: `${i * 0.1}s` }} />
                 ))}
               </div>
 
               {/* Testimonial Text */}
-              <blockquote className="text-xl md:text-2xl font-medium text-center mb-8 leading-relaxed">
+              <blockquote className="text-xl md:text-2xl font-medium text-center mb-8 leading-relaxed magnetic-hover text-reveal">
                 {currentTestimonial.content}
               </blockquote>
 
               {/* Results Badge */}
               <div className="text-center mb-8">
-                <span className="inline-block bg-primary/20 border border-primary/30 rounded-full px-6 py-2 text-primary font-semibold">
+                <span className="inline-block bg-primary/20 border border-primary/30 rounded-full px-6 py-2 text-primary font-semibold smart-hover interactive-glow text-shimmer breathing">
                   {currentTestimonial.results}
                 </span>
               </div>
 
               {/* Author Info */}
-              <div className="flex items-center justify-center space-x-4">
+              <div className="flex items-center justify-center space-x-4 magnetic-field">
                 <img
                   src={currentTestimonial.image}
                   alt={currentTestimonial.name}
-                  className="w-16 h-16 rounded-full object-cover border-2 border-primary/30"
+                  className="w-16 h-16 rounded-full object-cover border-2 border-primary/30 floating-element interactive-glow"
                 />
                 <div className="text-center">
-                  <div className="font-semibold text-lg">{currentTestimonial.name}</div>
-                  <div className="text-foreground/60">
+                  <div className="font-semibold text-lg magnetic-hover text-shimmer">{currentTestimonial.name}</div>
+                  <div className="text-foreground/60 breathing">
                     {currentTestimonial.title} at {currentTestimonial.company}
                   </div>
                 </div>
@@ -129,9 +129,9 @@ const TestimonialsSection = () => {
               variant="outline"
               size="icon"
               onClick={prevTestimonial}
-              className="w-12 h-12 rounded-full border-border hover:border-primary transition-colors"
+              className="w-12 h-12 rounded-full border-border hover:border-primary transition-colors smart-hover magnetic-field interactive-glow"
             >
-              <ArrowLeft className="w-5 h-5" />
+              <ArrowLeft className="w-5 h-5 floating-element" />
             </Button>
 
             {/* Dots Indicator */}
@@ -140,8 +140,8 @@ const TestimonialsSection = () => {
                 <button
                   key={index}
                   onClick={() => setCurrentIndex(index)}
-                  className={`w-3 h-3 rounded-full transition-colors ${
-                    index === currentIndex ? 'bg-primary' : 'bg-foreground/20'
+                  className={`w-3 h-3 rounded-full transition-colors smart-hover smart-pulse ${
+                    index === currentIndex ? 'bg-primary interactive-glow' : 'bg-foreground/20'
                   }`}
                 />
               ))}
@@ -151,27 +151,25 @@ const TestimonialsSection = () => {
               variant="outline"
               size="icon"
               onClick={nextTestimonial}
-              className="w-12 h-12 rounded-full border-border hover:border-primary transition-colors"
+              className="w-12 h-12 rounded-full border-border hover:border-primary transition-colors smart-hover magnetic-field interactive-glow"
             >
-              <ArrowRight className="w-5 h-5" />
+              <ArrowRight className="w-5 h-5 floating-element" />
             </Button>
           </div>
         </div>
 
         {/* Additional Stats */}
-        <div className="grid md:grid-cols-3 gap-8 mt-16 animate-fade-up" style={{ animationDelay: '0.3s' }}>
-          <div className="text-center">
-            <div className="text-4xl font-bold gradient-text mb-2">200+</div>
-            <div className="text-foreground/80">Happy Clients</div>
-          </div>
-          <div className="text-center">
-            <div className="text-4xl font-bold gradient-text mb-2">5M+</div>
-            <div className="text-foreground/80">Leads Generated</div>
-          </div>
-          <div className="text-center">
-            <div className="text-4xl font-bold gradient-text mb-2">300%</div>
-            <div className="text-foreground/80">Average ROI</div>
-          </div>
+        <div className="grid md:grid-cols-3 gap-8 mt-16 animate-fade-up morphing-bg rounded-2xl p-8" style={{ animationDelay: '0.3s' }}>
+          {[
+            { value: "200+", label: "Happy Clients" },
+            { value: "5M+", label: "Leads Generated" },
+            { value: "300%", label: "Average ROI" }
+          ].map((stat, index) => (
+            <div key={index} className="text-center smart-hover magnetic-field animate-intelligent-hover" style={{ animationDelay: `${index * 0.1}s` }}>
+              <div className="text-4xl font-bold gradient-text text-shimmer floating-element mb-2">{stat.value}</div>
+              <div className="text-foreground/80 breathing">{stat.label}</div>
+            </div>
+          ))}
         </div>
       </div>
     </section>
