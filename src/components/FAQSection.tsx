@@ -54,60 +54,46 @@ const FAQSection = () => {
   };
 
   return (
-    <section id="faq" className="py-24 bg-card/30 video-overlay relative overflow-hidden">
-      {/* Background Video */}
-      <div className="absolute inset-0 w-full h-full">
-        <video 
-          autoPlay 
-          muted 
-          loop 
-          playsInline
-          className="absolute inset-0 w-full h-full object-cover opacity-5"
-        >
-          <source src="https://videos.pexels.com/video-files/6191582/6191582-uhd_2560_1440_30fps.mp4" type="video/mp4" />
-          <source src="https://videos.pexels.com/video-files/5377684/5377684-uhd_2560_1440_25fps.mp4" type="video/mp4" />
-        </video>
-      </div>
-
-      <div className="container-width section-padding relative z-10">
-        <div className="text-center mb-16 smooth-enter">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-reveal">
+    <section id="faq" className="py-24 bg-card/30">
+      <div className="container-width section-padding">
+        <div className="text-center mb-16 animate-fade-up">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6">
             Frequently Asked
-            <span className="gradient-text text-shimmer"> Questions</span>
+            <span className="gradient-text"> Questions</span>
           </h2>
-          <p className="text-xl text-foreground/80 max-w-3xl mx-auto breathing">
+          <p className="text-xl text-foreground/80 max-w-3xl mx-auto">
             Get answers to the most common questions about our lead generation system and process.
           </p>
         </div>
 
         <div className="max-w-4xl mx-auto">
-          <div className="space-y-6">
+          <div className="space-y-4">
             {faqs.map((faq, index) => (
               <Card 
                 key={index}
-                className={`glassmorphism border-border transition-all duration-500 ultra-smooth-hover smooth-enter ${
-                  openFAQ === index ? 'border-primary/30 shadow-lg interactive-glow' : ''
+                className={`bg-card border-border transition-all duration-300 animate-fade-up ${
+                  openFAQ === index ? 'border-primary/30 shadow-lg' : ''
                 }`}
                 style={{ animationDelay: `${index * 0.05}s` }}
               >
                 <button
                   onClick={() => toggleFAQ(index)}
-                  className="w-full p-8 text-left flex items-center justify-between hover:bg-card/50 transition-colors ultra-smooth-hover rounded-lg"
+                  className="w-full p-6 text-left flex items-center justify-between hover:bg-card/50 transition-colors"
                 >
-                  <h3 className="text-lg font-semibold pr-4 magnetic-hover">{faq.question}</h3>
-                  <div className="flex-shrink-0 floating-element">
+                  <h3 className="text-lg font-semibold pr-4">{faq.question}</h3>
+                  <div className="flex-shrink-0">
                     {openFAQ === index ? (
-                      <ChevronUp className="w-6 h-6 text-primary" />
+                      <ChevronUp className="w-5 h-5 text-primary" />
                     ) : (
-                      <ChevronDown className="w-6 h-6 text-foreground/60" />
+                      <ChevronDown className="w-5 h-5 text-foreground/60" />
                     )}
                   </div>
                 </button>
                 
                 {openFAQ === index && (
-                  <div className="px-8 pb-8">
-                    <div className="pt-6 border-t border-border/30">
-                      <p className="text-foreground/80 leading-relaxed text-lg breathing">
+                  <div className="px-6 pb-6">
+                    <div className="pt-4 border-t border-border/30">
+                      <p className="text-foreground/80 leading-relaxed">
                         {faq.answer}
                       </p>
                     </div>
@@ -118,8 +104,8 @@ const FAQSection = () => {
           </div>
 
           {/* Still have questions CTA */}
-          <div className="text-center mt-16 smooth-enter" style={{ animationDelay: '0.8s' }}>
-            <div className="bg-gradient-primary rounded-3xl p-10 text-background relative overflow-hidden interactive-glow ultra-smooth-hover">
+          <div className="text-center mt-12 animate-fade-up" style={{ animationDelay: '0.8s' }}>
+            <div className="bg-gradient-primary rounded-2xl p-8 text-background relative overflow-hidden">
               {/* Video Background */}
               <div className="absolute inset-0 w-full h-full">
                 <video 
@@ -135,19 +121,19 @@ const FAQSection = () => {
               </div>
 
               {/* Background Elements */}
-              <div className="absolute top-6 left-6 w-20 h-20 bg-background/10 rounded-full blur-xl floating-element"></div>
-              <div className="absolute bottom-6 right-6 w-24 h-24 bg-background/10 rounded-full blur-xl floating-element" style={{ animationDelay: '0.5s' }}></div>
+              <div className="absolute top-4 left-4 w-16 h-16 bg-background/10 rounded-full blur-xl"></div>
+              <div className="absolute bottom-4 right-4 w-20 h-20 bg-background/10 rounded-full blur-xl"></div>
               
               <div className="relative z-10">
-                <h3 className="text-3xl font-bold mb-6 text-reveal">Still Have Questions?</h3>
-                <p className="text-xl opacity-90 mb-8 breathing">
+                <h3 className="text-2xl font-bold mb-4">Still Have Questions?</h3>
+                <p className="text-lg opacity-90 mb-6">
                   Schedule a free strategy call to discuss your specific situation and see if we're the right fit.
                 </p>
-                <div className="flex flex-col sm:flex-row gap-6 justify-center">
-                  <button className="bg-background text-primary hover:bg-background/90 px-10 py-4 rounded-xl font-semibold transition-colors ultra-smooth-hover interactive-glow text-lg">
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <button className="bg-background text-primary hover:bg-background/90 px-8 py-3 rounded-lg font-semibold transition-colors">
                     Schedule Free Call
                   </button>
-                  <button className="border-2 border-background/20 hover:bg-background/10 px-10 py-4 rounded-xl font-semibold transition-colors ultra-smooth-hover text-lg">
+                  <button className="border border-background/20 hover:bg-background/10 px-8 py-3 rounded-lg font-semibold transition-colors">
                     Send Us a Message
                   </button>
                 </div>
