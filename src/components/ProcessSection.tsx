@@ -1,3 +1,4 @@
+
 import { Card } from '@/components/ui/card';
 import { Search, Users, Calendar, ArrowRight } from 'lucide-react';
 
@@ -70,13 +71,13 @@ const ProcessSection = () => {
   ];
 
   return (
-    <section id="process" className="py-24 bg-card/30">
+    <section id="process" className="py-24 bg-card/30 particle-system">
       <div className="container-width section-padding">
         <div className="text-center mb-16 animate-fade-up">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-reveal">
             Our Proven 4-Step Process
           </h2>
-          <p className="text-xl text-foreground/80 max-w-3xl mx-auto">
+          <p className="text-xl text-foreground/80 max-w-3xl mx-auto breathing">
             From discovery to optimization, we follow a systematic approach that ensures your lead generation machine delivers exceptional results.
           </p>
         </div>
@@ -84,7 +85,7 @@ const ProcessSection = () => {
         {/* Timeline */}
         <div className="relative">
           {/* Connection Line */}
-          <div className="hidden md:block absolute top-8 left-1/2 transform -translate-x-1/2 w-px h-full bg-gradient-to-b from-primary via-accent to-agency-orange"></div>
+          <div className="hidden md:block absolute top-8 left-1/2 transform -translate-x-1/2 w-px h-full bg-gradient-to-b from-primary via-accent to-agency-orange animate-smart-pulse"></div>
 
           <div className="space-y-16">
             {steps.map((step, index) => (
@@ -95,14 +96,14 @@ const ProcessSection = () => {
               >
                 {/* Left Content (odd) or Right Content (even) */}
                 <div className={`w-full md:w-1/2 ${index % 2 === 0 ? 'md:text-right md:pr-12' : 'md:order-2 md:pl-12'}`}>
-                  <Card className={`bg-card border ${step.borderColor} p-8 hover:scale-105 transition-all duration-300 hover:shadow-2xl`}>
+                  <Card className={`bg-card border ${step.borderColor} p-8 smart-hover interactive-glow magnetic-field glassmorphism`}>
                     <div className="flex items-center space-x-4 mb-4">
-                      <div className={`w-12 h-12 ${step.bgColor} rounded-xl flex items-center justify-center`}>
+                      <div className={`w-12 h-12 ${step.bgColor} rounded-xl flex items-center justify-center floating-element`}>
                         <step.icon className={`w-6 h-6 ${step.color}`} />
                       </div>
                       <div>
-                        <h3 className="text-2xl font-bold">{step.title}</h3>
-                        <p className={`${step.color} font-medium`}>{step.subtitle}</p>
+                        <h3 className="text-2xl font-bold magnetic-hover">{step.title}</h3>
+                        <p className={`${step.color} font-medium text-shimmer`}>{step.subtitle}</p>
                       </div>
                     </div>
                     
@@ -112,8 +113,8 @@ const ProcessSection = () => {
 
                     <ul className="space-y-2">
                       {step.details.map((detail, detailIndex) => (
-                        <li key={detailIndex} className="flex items-center space-x-3">
-                          <div className={`w-1.5 h-1.5 ${step.bgColor} rounded-full`}></div>
+                        <li key={detailIndex} className="flex items-center space-x-3 animate-intelligent-hover" style={{ animationDelay: `${detailIndex * 0.1}s` }}>
+                          <div className={`w-1.5 h-1.5 ${step.bgColor} rounded-full smart-pulse`}></div>
                           <span className="text-sm text-foreground/80">{detail}</span>
                         </li>
                       ))}
@@ -123,7 +124,7 @@ const ProcessSection = () => {
 
                 {/* Center Number */}
                 <div className="relative z-10 flex-shrink-0">
-                  <div className={`w-16 h-16 ${step.bgColor} border-4 ${step.borderColor} rounded-full flex items-center justify-center bg-background shadow-lg`}>
+                  <div className={`w-16 h-16 ${step.bgColor} border-4 ${step.borderColor} rounded-full flex items-center justify-center bg-background shadow-lg interactive-glow breathing fractal-bg`}>
                     <span className={`text-xl font-bold ${step.color}`}>{step.number}</span>
                   </div>
                 </div>
@@ -136,17 +137,17 @@ const ProcessSection = () => {
         </div>
 
         {/* Timeline Stats */}
-        <div className="mt-16 grid md:grid-cols-3 gap-8 animate-fade-up" style={{ animationDelay: '0.8s' }}>
-          <div className="text-center">
-            <div className="text-3xl font-bold gradient-text mb-2">30 Days</div>
+        <div className="mt-16 grid md:grid-cols-3 gap-8 animate-fade-up morphing-bg rounded-2xl p-8" style={{ animationDelay: '0.8s' }}>
+          <div className="text-center smart-hover">
+            <div className="text-3xl font-bold gradient-text text-shimmer mb-2">30 Days</div>
             <div className="text-foreground/80">Average Setup Time</div>
           </div>
-          <div className="text-center">
-            <div className="text-3xl font-bold gradient-text mb-2">90%</div>
+          <div className="text-center smart-hover">
+            <div className="text-3xl font-bold gradient-text text-shimmer mb-2">90%</div>
             <div className="text-foreground/80">Client Satisfaction</div>
           </div>
-          <div className="text-center">
-            <div className="text-3xl font-bold gradient-text mb-2">24/7</div>
+          <div className="text-center smart-hover">
+            <div className="text-3xl font-bold gradient-text text-shimmer mb-2">24/7</div>
             <div className="text-foreground/80">Ongoing Support</div>
           </div>
         </div>

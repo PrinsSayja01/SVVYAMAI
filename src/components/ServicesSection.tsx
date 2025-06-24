@@ -53,14 +53,14 @@ const ServicesSection = () => {
   ];
 
   return (
-    <section id="services" className="py-24">
+    <section id="services" className="py-24 morphing-bg">
       <div className="container-width section-padding">
         <div className="text-center mb-16 animate-fade-up">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-reveal">
             The 3 Pillars of Your
-            <span className="gradient-text"> Lead Generation Machine</span>
+            <span className="gradient-text text-shimmer"> Lead Generation Machine</span>
           </h2>
-          <p className="text-xl text-foreground/80 max-w-3xl mx-auto">
+          <p className="text-xl text-foreground/80 max-w-3xl mx-auto breathing">
             Our proven methodology combines cutting-edge technology, strategic design, and powerful positioning to create an unstoppable lead generation system.
           </p>
         </div>
@@ -69,17 +69,17 @@ const ServicesSection = () => {
           {services.map((service, index) => (
             <Card 
               key={service.title}
-              className={`bg-card border ${service.borderColor} p-8 hover:scale-105 transition-all duration-300 hover:shadow-2xl group animate-fade-up`}
+              className={`bg-card border ${service.borderColor} p-8 smart-hover interactive-glow magnetic-field particle-system animate-fade-up`}
               style={{ animationDelay: `${index * 0.2}s` }}
             >
               {/* Icon */}
-              <div className={`w-16 h-16 ${service.bgColor} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
+              <div className={`w-16 h-16 ${service.bgColor} rounded-2xl flex items-center justify-center mb-6 smart-pulse floating-element`}>
                 <service.icon className={`w-8 h-8 ${service.color}`} />
               </div>
 
               {/* Title */}
-              <h3 className="text-2xl font-bold mb-2">{service.title}</h3>
-              <p className={`${service.color} font-medium mb-4`}>{service.subtitle}</p>
+              <h3 className="text-2xl font-bold mb-2 magnetic-hover">{service.title}</h3>
+              <p className={`${service.color} font-medium mb-4 text-shimmer`}>{service.subtitle}</p>
 
               {/* Description */}
               <p className="text-foreground/80 mb-6 leading-relaxed">
@@ -89,15 +89,15 @@ const ServicesSection = () => {
               {/* Features */}
               <ul className="space-y-3 mb-8">
                 {service.features.map((feature, featureIndex) => (
-                  <li key={featureIndex} className="flex items-center space-x-3">
-                    <div className={`w-2 h-2 ${service.bgColor} rounded-full`}></div>
+                  <li key={featureIndex} className="flex items-center space-x-3 animate-intelligent-hover" style={{ animationDelay: `${featureIndex * 0.1}s` }}>
+                    <div className={`w-2 h-2 ${service.bgColor} rounded-full smart-pulse`}></div>
                     <span className="text-sm text-foreground/80">{feature}</span>
                   </li>
                 ))}
               </ul>
 
               {/* CTA */}
-              <Button variant="ghost" className={`w-full group/btn hover:${service.bgColor} hover:${service.color}`}>
+              <Button variant="ghost" className={`w-full liquid-button group/btn hover:${service.bgColor} hover:${service.color}`}>
                 Learn More
                 <ArrowRight className="ml-2 w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
               </Button>
@@ -106,20 +106,20 @@ const ServicesSection = () => {
         </div>
 
         {/* Bottom CTA */}
-        <div className="text-center animate-fade-up" style={{ animationDelay: '0.6s' }}>
-          <div className="bg-gradient-primary rounded-2xl p-8 md:p-12 text-background">
-            <h3 className="text-3xl md:text-4xl font-bold mb-4">
+        <div className="text-center animate-fade-up fractal-bg rounded-2xl" style={{ animationDelay: '0.6s' }}>
+          <div className="bg-gradient-primary rounded-2xl p-8 md:p-12 text-background glassmorphism">
+            <h3 className="text-3xl md:text-4xl font-bold mb-4 text-reveal">
               Ready to Build Your Lead Generation Machine?
             </h3>
-            <p className="text-xl opacity-90 mb-8 max-w-2xl mx-auto">
+            <p className="text-xl opacity-90 mb-8 max-w-2xl mx-auto breathing">
               Let's create a custom system that captures, nurtures, and converts high-quality leads for your business.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button className="bg-agency-blue text-background hover:bg-agency-blue/90 px-8 py-4 text-lg font-semibold">
+              <Button className="liquid-button bg-agency-blue text-background hover:bg-agency-blue/90 px-8 py-4 text-lg font-semibold magnetic-field">
                 Get Started Today
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
-              <Button variant="outline" className="border-background/20 text-background hover:bg-background/10 px-8 py-4 text-lg font-semibold">
+              <Button variant="outline" className="border-background/20 text-background hover:bg-background/10 px-8 py-4 text-lg font-semibold smart-hover">
                 Schedule Consultation
               </Button>
             </div>
