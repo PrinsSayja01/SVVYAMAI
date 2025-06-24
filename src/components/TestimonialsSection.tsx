@@ -69,9 +69,23 @@ const TestimonialsSection = () => {
   const currentTestimonial = testimonials[currentIndex];
 
   return (
-    <section id="testimonials" className="py-24 morphing-bg particle-system">
-      <div className="container-width section-padding">
-        <div className="text-center mb-16 animate-fade-up magnetic-field">
+    <section id="testimonials" className="py-24 morphing-bg particle-system video-overlay relative overflow-hidden">
+      {/* Background Video */}
+      <div className="absolute inset-0 w-full h-full">
+        <video 
+          autoPlay 
+          muted 
+          loop 
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover opacity-10"
+        >
+          <source src="https://videos.pexels.com/video-files/3129671/3129671-uhd_2560_1440_30fps.mp4" type="video/mp4" />
+          <source src="https://videos.pexels.com/video-files/8847346/8847346-uhd_2560_1440_30fps.mp4" type="video/mp4" />
+        </video>
+      </div>
+
+      <div className="container-width section-padding relative z-10">
+        <div className="text-center mb-16 smooth-enter magnetic-field">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-reveal magnetic-hover">
             What Our Clients Are Saying
           </h2>
@@ -81,66 +95,68 @@ const TestimonialsSection = () => {
         </div>
 
         <div className="max-w-4xl mx-auto">
-          <Card className="glassmorphism border-border p-8 md:p-12 relative smart-hover interactive-glow magnetic-field fractal-bg">
+          <div className="glassmorphism border-border p-8 md:p-12 relative ultra-smooth-hover interactive-glow magnetic-field fractal-bg rounded-3xl">
             {/* Quote Marks */}
-            <div className="absolute top-6 left-6 text-6xl text-primary/20 font-serif floating-element">"</div>
+            <div className="absolute top-8 left-8 text-7xl text-primary/20 font-serif floating-element">"</div>
             
             {/* Content */}
             <div className="relative z-10">
               {/* Stars */}
-              <div className="flex justify-center mb-6">
+              <div className="flex justify-center mb-8">
                 {[...Array(currentTestimonial.rating)].map((_, i) => (
-                  <Star key={i} className="w-6 h-6 fill-primary text-primary smart-pulse floating-element" style={{ animationDelay: `${i * 0.1}s` }} />
+                  <div key={i} className="w-8 h-8 fill-primary text-primary smart-pulse floating-element interactive-glow" style={{ animationDelay: `${i * 0.1}s` }}>
+                    ⭐
+                  </div>
                 ))}
               </div>
 
               {/* Testimonial Text */}
-              <blockquote className="text-xl md:text-2xl font-medium text-center mb-8 leading-relaxed magnetic-hover text-reveal">
+              <blockquote className="text-xl md:text-2xl font-medium text-center mb-10 leading-relaxed magnetic-hover text-reveal">
                 {currentTestimonial.content}
               </blockquote>
 
               {/* Results Badge */}
-              <div className="text-center mb-8">
-                <span className="inline-block bg-primary/20 border border-primary/30 rounded-full px-6 py-2 text-primary font-semibold smart-hover interactive-glow text-shimmer breathing">
+              <div className="text-center mb-10">
+                <span className="inline-block glassmorphism border border-primary/30 rounded-full px-8 py-3 text-primary font-semibold ultra-smooth-hover interactive-glow text-shimmer breathing">
                   {currentTestimonial.results}
                 </span>
               </div>
 
               {/* Author Info */}
-              <div className="flex items-center justify-center space-x-4 magnetic-field">
+              <div className="flex items-center justify-center space-x-6 magnetic-field">
                 <img
                   src={currentTestimonial.image}
                   alt={currentTestimonial.name}
-                  className="w-16 h-16 rounded-full object-cover border-2 border-primary/30 floating-element interactive-glow"
+                  className="w-20 h-20 rounded-full object-cover border-3 border-primary/30 floating-element interactive-glow ultra-smooth-hover"
                 />
                 <div className="text-center">
-                  <div className="font-semibold text-lg magnetic-hover text-shimmer">{currentTestimonial.name}</div>
-                  <div className="text-foreground/60 breathing">
+                  <div className="font-semibold text-xl magnetic-hover text-shimmer">{currentTestimonial.name}</div>
+                  <div className="text-foreground/60 breathing text-lg">
                     {currentTestimonial.title} at {currentTestimonial.company}
                   </div>
                 </div>
               </div>
             </div>
-          </Card>
+          </div>
 
           {/* Navigation */}
-          <div className="flex items-center justify-center space-x-4 mt-8">
+          <div className="flex items-center justify-center space-x-6 mt-10">
             <Button
               variant="outline"
               size="icon"
               onClick={prevTestimonial}
-              className="w-12 h-12 rounded-full border-border hover:border-primary transition-colors smart-hover magnetic-field interactive-glow"
+              className="w-14 h-14 rounded-full border-border hover:border-primary transition-colors ultra-smooth-hover magnetic-field interactive-glow"
             >
-              <ArrowLeft className="w-5 h-5 floating-element" />
+              <ArrowLeft className="w-6 h-6 floating-element" />
             </Button>
 
             {/* Dots Indicator */}
-            <div className="flex space-x-2">
+            <div className="flex space-x-3">
               {testimonials.map((_, index) => (
                 <button
                   key={index}
                   onClick={() => setCurrentIndex(index)}
-                  className={`w-3 h-3 rounded-full transition-colors smart-hover smart-pulse ${
+                  className={`w-4 h-4 rounded-full transition-colors ultra-smooth-hover smart-pulse ${
                     index === currentIndex ? 'bg-primary interactive-glow' : 'bg-foreground/20'
                   }`}
                 />
@@ -151,23 +167,23 @@ const TestimonialsSection = () => {
               variant="outline"
               size="icon"
               onClick={nextTestimonial}
-              className="w-12 h-12 rounded-full border-border hover:border-primary transition-colors smart-hover magnetic-field interactive-glow"
+              className="w-14 h-14 rounded-full border-border hover:border-primary transition-colors ultra-smooth-hover magnetic-field interactive-glow"
             >
-              <ArrowRight className="w-5 h-5 floating-element" />
+              <ArrowRight className="w-6 h-6 floating-element" />
             </Button>
           </div>
         </div>
 
         {/* Additional Stats */}
-        <div className="grid md:grid-cols-3 gap-8 mt-16 animate-fade-up morphing-bg rounded-2xl p-8" style={{ animationDelay: '0.3s' }}>
+        <div className="grid md:grid-cols-3 gap-8 mt-16 smooth-enter glassmorphism rounded-3xl p-10" style={{ animationDelay: '0.3s' }}>
           {[
             { value: "200+", label: "Happy Clients" },
             { value: "5M+", label: "Leads Generated" },
             { value: "300%", label: "Average ROI" }
           ].map((stat, index) => (
-            <div key={index} className="text-center smart-hover magnetic-field animate-intelligent-hover" style={{ animationDelay: `${index * 0.1}s` }}>
-              <div className="text-4xl font-bold gradient-text text-shimmer floating-element mb-2">{stat.value}</div>
-              <div className="text-foreground/80 breathing">{stat.label}</div>
+            <div key={index} className="text-center ultra-smooth-hover magnetic-field animate-intelligent-hover" style={{ animationDelay: `${index * 0.1}s` }}>
+              <div className="text-5xl font-bold gradient-text text-shimmer floating-element mb-3">{stat.value}</div>
+              <div className="text-foreground/80 breathing text-lg">{stat.label}</div>
             </div>
           ))}
         </div>
