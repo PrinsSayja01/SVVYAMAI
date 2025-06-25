@@ -92,31 +92,36 @@ const ChatBox = () => {
       {!isOpen && (
         <Button
           onClick={() => setIsOpen(true)}
-          className="w-16 h-16 rounded-full bg-primary hover:bg-primary/90 shadow-lg hover:shadow-xl transition-all duration-300 animate-pulse"
+          className="w-16 h-16 rounded-full bg-primary hover:bg-primary/90 shadow-xl hover:shadow-2xl transition-all duration-500 animate-bounce-slow hover:animate-pulse transform hover:scale-110 group"
         >
-          <MessageCircle className="w-6 h-6" />
+          <MessageCircle className="w-6 h-6 transition-transform duration-300 group-hover:rotate-12" />
+          <div className="absolute -top-1 -right-1 w-4 h-4 bg-red-500 rounded-full animate-ping"></div>
+          <div className="absolute -top-1 -right-1 w-4 h-4 bg-red-500 rounded-full"></div>
         </Button>
       )}
 
       {/* Chat Window */}
       {isOpen && (
-        <Card className="w-80 h-96 flex flex-col shadow-2xl border-border animate-in slide-in-from-bottom-4 duration-300">
+        <Card className="w-80 h-96 flex flex-col shadow-2xl border-border animate-slide-in-bottom transform-gpu backdrop-blur-sm bg-card/95">
           {/* Header */}
-          <div className="flex items-center justify-between p-4 border-b border-border bg-primary text-primary-foreground rounded-t-lg">
+          <div className="flex items-center justify-between p-4 border-b border-border bg-primary text-primary-foreground rounded-t-lg animate-slide-in-top">
             <div className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center">
-                <Bot className="w-4 h-4" />
+              <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center animate-pulse-scale">
+                <Bot className="w-4 h-4 animate-bounce" />
               </div>
               <div>
-                <div className="font-semibold">LeadAgency Support</div>
-                <div className="text-xs opacity-80">Online now</div>
+                <div className="font-semibold animate-fade-in">LeadAgency Support</div>
+                <div className="text-xs opacity-80 flex items-center gap-1 animate-fade-in animation-delay-200">
+                  <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                  Online now
+                </div>
               </div>
             </div>
             <Button
               variant="ghost"
               size="icon"
               onClick={() => setIsOpen(false)}
-              className="text-primary-foreground hover:bg-white/20"
+              className="text-primary-foreground hover:bg-white/20 transition-all duration-300 hover:rotate-90"
             >
               <X className="w-4 h-4" />
             </Button>
@@ -124,14 +129,15 @@ const ChatBox = () => {
 
           {/* Messages */}
           <div className="flex-1 overflow-y-auto p-4 space-y-3">
-            {messages.map((message) => (
+            {messages.map((message, index) => (
               <div
                 key={message.id}
-                className={`flex ${message.sender === 'user' ? 'justify-end' : 'justify-start'}`}
+                className={`flex animate-slide-in-bottom ${message.sender === 'user' ? 'justify-end' : 'justify-start'}`}
+                style={{ animationDelay: `${index * 100}ms` }}
               >
                 <div className={`flex items-start space-x-2 max-w-[80%] ${message.sender === 'user' ? 'flex-row-reverse space-x-reverse' : ''}`}>
-                  <div className={`w-6 h-6 rounded-full flex items-center justify-center ${
-                    message.sender === 'user' ? 'bg-primary' : 'bg-muted'
+                  <div className={`w-6 h-6 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 ${
+                    message.sender === 'user' ? 'bg-primary animate-pulse-scale' : 'bg-muted animate-float'
                   }`}>
                     {message.sender === 'user' ? (
                       <User className="w-3 h-3 text-primary-foreground" />
@@ -139,13 +145,13 @@ const ChatBox = () => {
                       <Bot className="w-3 h-3 text-muted-foreground" />
                     )}
                   </div>
-                  <div className={`p-3 rounded-lg ${
+                  <div className={`p-3 rounded-lg transition-all duration-300 hover:scale-105 transform ${
                     message.sender === 'user' 
-                      ? 'bg-primary text-primary-foreground' 
-                      : 'bg-muted text-muted-foreground'
+                      ? 'bg-primary text-primary-foreground animate-slide-in-right' 
+                      : 'bg-muted text-muted-foreground animate-slide-in-left'
                   }`}>
-                    <div className="text-sm">{message.text}</div>
-                    <div className="text-xs opacity-60 mt-1">
+                    <div className="text-sm animate-typing">{message.text}</div>
+                    <div className="text-xs opacity-60 mt-1 animate-fade-in animation-delay-500">
                       {message.timestamp.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
                     </div>
                   </div>
@@ -155,16 +161,16 @@ const ChatBox = () => {
             
             {/* Typing Indicator */}
             {isTyping && (
-              <div className="flex justify-start">
+              <div className="flex justify-start animate-bounce-in">
                 <div className="flex items-center space-x-2">
-                  <div className="w-6 h-6 rounded-full bg-muted flex items-center justify-center">
+                  <div className="w-6 h-6 rounded-full bg-muted flex items-center justify-center animate-pulse">
                     <Bot className="w-3 h-3 text-muted-foreground" />
                   </div>
                   <div className="bg-muted p-3 rounded-lg">
                     <div className="flex space-x-1">
-                      <div className="w-2 h-2 bg-muted-foreground/50 rounded-full animate-bounce"></div>
-                      <div className="w-2 h-2 bg-muted-foreground/50 rounded-full animate-bounce" style={{ animationDelay: '0.1s' }}></div>
-                      <div className="w-2 h-2 bg-muted-foreground/50 rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
+                      <div className="w-2 h-2 bg-muted-foreground/50 rounded-full animate-bounce" style={{ animationDelay: '0ms' }}></div>
+                      <div className="w-2 h-2 bg-muted-foreground/50 rounded-full animate-bounce" style={{ animationDelay: '150ms' }}></div>
+                      <div className="w-2 h-2 bg-muted-foreground/50 rounded-full animate-bounce" style={{ animationDelay: '300ms' }}></div>
                     </div>
                   </div>
                 </div>
@@ -174,17 +180,22 @@ const ChatBox = () => {
           </div>
 
           {/* Input */}
-          <div className="p-4 border-t border-border">
+          <div className="p-4 border-t border-border animate-slide-in-bottom animation-delay-300">
             <div className="flex space-x-2">
               <Input
                 value={inputMessage}
                 onChange={(e) => setInputMessage(e.target.value)}
                 onKeyPress={handleKeyPress}
                 placeholder="Type your message..."
-                className="flex-1"
+                className="flex-1 transition-all duration-300 focus:scale-[1.02] focus:shadow-lg"
               />
-              <Button onClick={handleSendMessage} size="icon" disabled={!inputMessage.trim()}>
-                <Send className="w-4 h-4" />
+              <Button 
+                onClick={handleSendMessage} 
+                size="icon" 
+                disabled={!inputMessage.trim()}
+                className="transition-all duration-300 hover:scale-110 disabled:opacity-50 disabled:scale-100"
+              >
+                <Send className="w-4 h-4 transition-transform duration-300 hover:rotate-12" />
               </Button>
             </div>
           </div>
