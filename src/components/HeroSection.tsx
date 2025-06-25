@@ -1,8 +1,21 @@
 
+import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Users, Clock } from 'lucide-react';
 
 const HeroSection = () => {
+  const [currentCompany, setCurrentCompany] = useState(0);
+  const trustedCompanies = ["TechCorp", "GrowthCo", "ScaleUp", "InnovateNow"];
+
+  // Auto-rotate trusted companies
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentCompany((prev) => (prev + 1) % trustedCompanies.length);
+    }, 2000); // Change every 2 seconds
+    
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Spline 3D Background - New Robot Greeting */}
@@ -70,12 +83,20 @@ const HeroSection = () => {
               </Button>
             </div>
 
-            {/* Social Proof */}
+            {/* Social Proof - Now with animated company names */}
             <div className="pt-8 border-t border-border/30">
               <p className="text-sm text-foreground/60 mb-4 breathing">Trusted by 200+ Growing Businesses</p>
               <div className="flex flex-wrap justify-center lg:justify-start gap-6 opacity-60">
-                {["TechCorp", "GrowthCo", "ScaleUp", "InnovateNow"].map((company, index) => (
-                  <div key={company} className="bg-foreground/10 rounded px-4 py-2 text-sm font-medium smart-hover animate-intelligent-hover" style={{ animationDelay: `${index * 0.1}s` }}>
+                {trustedCompanies.map((company, index) => (
+                  <div 
+                    key={company} 
+                    className={`bg-foreground/10 rounded px-4 py-2 text-sm font-medium smart-hover animate-intelligent-hover transition-all duration-500 ${
+                      index === currentCompany 
+                        ? 'scale-110 bg-primary/20 text-primary border border-primary/30 shadow-lg' 
+                        : 'scale-100'
+                    }`}
+                    style={{ animationDelay: `${index * 0.1}s` }}
+                  >
                     {company}
                   </div>
                 ))}
