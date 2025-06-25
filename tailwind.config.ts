@@ -110,6 +110,23 @@ export default {
 					'0%': { transform: 'translateY(-100px)', opacity: '0' },
 					'100%': { transform: 'translateY(0)', opacity: '1' }
 				},
+				'slide-in-left': {
+					'0%': { transform: 'translateX(-20px)', opacity: '0' },
+					'100%': { transform: 'translateX(0)', opacity: '1' }
+				},
+				'slide-in-right': {
+					'0%': { transform: 'translateX(20px)', opacity: '0' },
+					'100%': { transform: 'translateX(0)', opacity: '1' }
+				},
+				'fade-in': {
+					'0%': { opacity: '0' },
+					'100%': { opacity: '1' }
+				},
+				'typing': {
+					'0%': { opacity: '0.5' },
+					'50%': { opacity: '1' },
+					'100%': { opacity: '0.5' }
+				},
 				'elastic-in': {
 					'0%': { transform: 'scale(0)', opacity: '0' },
 					'50%': { transform: 'scale(1.2)' },
@@ -244,6 +261,10 @@ export default {
 				'wobble': 'wobble 1s ease-in-out',
 				'slide-in-bottom': 'slide-in-bottom 0.8s ease-out',
 				'slide-in-top': 'slide-in-top 0.8s ease-out',
+				'slide-in-left': 'slide-in-left 0.5s ease-out',
+				'slide-in-right': 'slide-in-right 0.5s ease-out',
+				'fade-in': 'fade-in 0.8s ease-out',
+				'typing': 'typing 2s ease-in-out infinite',
 				'elastic-in': 'elastic-in 0.8s ease-out',
 				'rubber-band': 'rubber-band 1s ease-out',
 				'flip-in-x': 'flip-in-x 0.8s ease-out',
