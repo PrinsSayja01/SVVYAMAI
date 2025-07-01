@@ -1,46 +1,65 @@
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, lazy, Suspense } from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Users, Clock } from 'lucide-react';
 
+// Lazy load heavy components
+const SplineViewer = lazy(() => Promise.resolve({
+  default: () => (
+    <iframe 
+      src='https://my.spline.design/genkubgreetingrobot-DwrKsTH7sYeMFIfRCIKDwinY/' 
+      frameBorder='0' 
+      width='100%' 
+      height='100%'
+      className="absolute inset-0 w-full h-full object-cover"
+      loading="lazy"
+    />
+  )
+}));
+
 const HeroSection = () => {
   const [currentCompany, setCurrentCompany] = useState(0);
+  const [isLoaded, setIsLoaded] = useState(false);
   const trustedCompanies = ["TechCorp", "GrowthCo", "ScaleUp", "InnovateNow"];
 
   // Auto-rotate trusted companies
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentCompany((prev) => (prev + 1) % trustedCompanies.length);
-    }, 2000); // Change every 2 seconds
+    }, 2000);
     
     return () => clearInterval(interval);
   }, []);
 
+  // Optimize loading
+  useEffect(() => {
+    const timer = setTimeout(() => setIsLoaded(true), 100);
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Spline 3D Background - New Robot Greeting */}
+      {/* Optimized 3D Background */}
       <div className="absolute inset-0 w-full h-full">
-        <iframe 
-          src='https://my.spline.design/genkubgreetingrobot-DwrKsTH7sYeMFIfRCIKDwinY/' 
-          frameBorder='0' 
-          width='100%' 
-          height='100%'
-          className="absolute inset-0 w-full h-full object-cover"
-        />
+        <Suspense fallback={
+          <div className="absolute inset-0 w-full h-full bg-gradient-hero animate-pulse" />
+        }>
+          {isLoaded && <SplineViewer />}
+        </Suspense>
       </div>
 
-      {/* Intelligent particle system overlay */}
-      <div className="absolute inset-0 particle-system interactive-glow"></div>
+      {/* Optimized particle system overlay */}
+      <div className="absolute inset-0 particle-system interactive-glow opacity-30"></div>
 
       {/* Dark overlay for better text readability */}
-      <div className="absolute inset-0 bg-background/60 backdrop-blur-sm"></div>
+      <div className="absolute inset-0 bg-background/60 backdrop-blur-sm transition-all duration-300"></div>
 
       <div className="container-width section-padding relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Side - Content */}
           <div className="text-center lg:text-left animate-fade-up magnetic-field">
             {/* Trust Badge */}
-            <div className="inline-flex items-center space-x-2 bg-primary/20 border border-primary/30 rounded-full px-4 py-2 mb-6 smart-hover interactive-glow breathing">
+            <div className="inline-flex items-center space-x-2 bg-primary/20 border border-primary/30 rounded-full px-4 py-2 mb-6 smart-hover interactive-glow breathing transition-all duration-300">
               <div className="w-2 h-2 bg-primary rounded-full smart-pulse"></div>
               <span className="text-sm font-medium text-primary text-shimmer">Only 5 Spots Available This Quarter</span>
             </div>
@@ -59,13 +78,13 @@ const HeroSection = () => {
             </p>
 
             {/* Stats */}
-            <div className="flex flex-wrap justify-center lg:justify-start gap-8 mb-8 morphing-bg rounded-2xl p-4">
+            <div className="flex flex-wrap justify-center lg:justify-start gap-8 mb-8 morphing-bg rounded-2xl p-4 transition-all duration-300">
               {[
                 { value: "300%", label: "Average ROI" },
                 { value: "24/7", label: "Lead Capture" },
                 { value: "90%", label: "Less Manual Work" }
               ].map((stat, index) => (
-                <div key={index} className="text-center smart-hover interactive-glow" style={{ animationDelay: `${index * 0.2}s` }}>
+                <div key={index} className="text-center smart-hover interactive-glow transition-all duration-300" style={{ animationDelay: `${index * 0.2}s` }}>
                   <div className="text-3xl font-bold gradient-text text-shimmer floating-element">{stat.value}</div>
                   <div className="text-sm text-foreground/60">{stat.label}</div>
                 </div>
@@ -74,16 +93,16 @@ const HeroSection = () => {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8">
-              <Button className="liquid-button group magnetic-field interactive-glow">
+              <Button className="liquid-button group magnetic-field interactive-glow transition-all duration-300">
                 Get Your Lead Machine
                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform floating-element" />
               </Button>
-              <Button variant="outline" className="smart-hover glassmorphism magnetic-field">
+              <Button variant="outline" className="smart-hover glassmorphism magnetic-field transition-all duration-300">
                 Watch Demo (2 min)
               </Button>
             </div>
 
-            {/* Social Proof - Now with animated company names */}
+            {/* Social Proof - Animated company names */}
             <div className="pt-8 border-t border-border/30">
               <p className="text-sm text-foreground/60 mb-4 breathing">Trusted by 200+ Growing Businesses</p>
               <div className="flex flex-wrap justify-center lg:justify-start gap-6 opacity-60">
@@ -116,7 +135,7 @@ const HeroSection = () => {
             </div>
 
             {/* Lead Dashboard */}
-            <div className="animate-fade-up glassmorphism rounded-2xl p-6 border border-border shadow-2xl interactive-glow morphing-bg smart-hover">
+            <div className="animate-fade-up glassmorphism rounded-2xl p-6 border border-border shadow-2xl interactive-glow morphing-bg smart-hover transition-all duration-300">
               <div className="space-y-4">
                 <div className="flex items-center justify-between mb-6">
                   <h3 className="text-lg font-semibold magnetic-hover">Lead Dashboard</h3>
@@ -127,7 +146,7 @@ const HeroSection = () => {
                 </div>
 
                 <div className="grid grid-cols-2 gap-4">
-                  <div className="glassmorphism rounded-lg p-4 smart-hover magnetic-field animate-intelligent-hover">
+                  <div className="glassmorphism rounded-lg p-4 smart-hover magnetic-field animate-intelligent-hover transition-all duration-300">
                     <div className="flex items-center space-x-2 mb-2">
                       <Users className="h-5 w-5 text-primary floating-element" />
                       <span className="text-sm font-medium">New Leads</span>
@@ -136,7 +155,7 @@ const HeroSection = () => {
                     <div className="text-xs text-foreground/60 breathing">+23% this week</div>
                   </div>
 
-                  <div className="glassmorphism rounded-lg p-4 smart-hover magnetic-field animate-intelligent-hover" style={{ animationDelay: '0.1s' }}>
+                  <div className="glassmorphism rounded-lg p-4 smart-hover magnetic-field animate-intelligent-hover transition-all duration-300" style={{ animationDelay: '0.1s' }}>
                     <div className="flex items-center space-x-2 mb-2">
                       <Clock className="h-5 w-5 text-accent floating-element" />
                       <span className="text-sm font-medium">Response Time</span>
@@ -146,7 +165,7 @@ const HeroSection = () => {
                   </div>
                 </div>
 
-                <div className="bg-gradient-primary rounded-lg p-4 text-background interactive-glow magnetic-field fractal-bg">
+                <div className="bg-gradient-primary rounded-lg p-4 text-background interactive-glow magnetic-field fractal-bg transition-all duration-300">
                   <div className="text-sm font-medium mb-1">Conversion Rate</div>
                   <div className="text-3xl font-bold floating-element">34.5%</div>
                   <div className="text-sm opacity-80 breathing">Industry average: 12%</div>

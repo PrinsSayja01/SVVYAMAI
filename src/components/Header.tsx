@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Menu, X } from 'lucide-react';
+import { ThemeToggle } from './ThemeToggle';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -16,7 +17,7 @@ const Header = () => {
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-md border-b border-border">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-md border-b border-border transition-all duration-300">
       <div className="container-width section-padding">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
@@ -40,8 +41,9 @@ const Header = () => {
             ))}
           </nav>
 
-          {/* CTA Button */}
+          {/* CTA Button and Theme Toggle */}
           <div className="hidden md:flex items-center space-x-4">
+            <ThemeToggle />
             <Button className="btn-primary">
               Get Your Lead Machine
             </Button>
@@ -70,9 +72,12 @@ const Header = () => {
                   {item.label}
                 </a>
               ))}
-              <Button className="btn-primary mt-4 w-full">
-                Get Your Lead Machine
-              </Button>
+              <div className="flex items-center justify-between mt-4">
+                <ThemeToggle />
+                <Button className="btn-primary flex-1 ml-4">
+                  Get Your Lead Machine
+                </Button>
+              </div>
             </nav>
           </div>
         )}
