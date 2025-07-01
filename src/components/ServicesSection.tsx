@@ -54,38 +54,23 @@ const ServicesSection = () => {
 
   return (
     <section id="services" className="py-24 relative overflow-hidden">
-      {/* AI-themed Background with Blur Effects */}
+      {/* AI Background Image with Overlay */}
       <div className="absolute inset-0">
-        {/* Main gradient background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-background via-background/95 to-muted/50"></div>
+        {/* Background Image */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: `url('/lovable-uploads/e8749392-108e-4985-8aa4-1df5802c4127.png')`
+          }}
+        ></div>
         
-        {/* Animated gradient orbs */}
+        {/* Dark overlay for better text readability */}
+        <div className="absolute inset-0 bg-background/80 backdrop-blur-[1px]"></div>
+        
+        {/* Additional blur effects and gradients for depth */}
         <div className="absolute top-10 left-10 w-72 h-72 bg-gradient-to-r from-primary/20 to-accent/20 rounded-full blur-3xl animate-pulse"></div>
         <div className="absolute top-40 right-20 w-96 h-96 bg-gradient-to-l from-accent/15 to-primary/15 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
         <div className="absolute bottom-20 left-1/3 w-80 h-80 bg-gradient-to-t from-primary/10 to-accent/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
-        
-        {/* Neural network pattern */}
-        <div className="absolute inset-0 opacity-5">
-          <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-primary rounded-full animate-ping"></div>
-          <div className="absolute top-1/3 right-1/3 w-1 h-1 bg-accent rounded-full animate-ping" style={{ animationDelay: '0.5s' }}></div>
-          <div className="absolute bottom-1/4 left-1/2 w-1.5 h-1.5 bg-primary rounded-full animate-ping" style={{ animationDelay: '1s' }}></div>
-          <div className="absolute top-2/3 left-1/5 w-1 h-1 bg-accent rounded-full animate-ping" style={{ animationDelay: '1.5s' }}></div>
-          <div className="absolute bottom-1/3 right-1/4 w-2 h-2 bg-primary rounded-full animate-ping" style={{ animationDelay: '2s' }}></div>
-        </div>
-        
-        {/* Connecting lines */}
-        <svg className="absolute inset-0 w-full h-full opacity-10" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="hsl(var(--primary))" stopOpacity="0.3"/>
-              <stop offset="100%" stopColor="hsl(var(--accent))" stopOpacity="0.1"/>
-            </linearGradient>
-          </defs>
-          <line x1="25%" y1="25%" x2="75%" y2="33%" stroke="url(#lineGradient)" strokeWidth="1"/>
-          <line x1="33%" y1="33%" x2="50%" y2="66%" stroke="url(#lineGradient)" strokeWidth="1"/>
-          <line x1="66%" y1="25%" x2="20%" y2="75%" stroke="url(#lineGradient)" strokeWidth="1"/>
-          <line x1="75%" y1="66%" x2="25%" y2="75%" stroke="url(#lineGradient)" strokeWidth="1"/>
-        </svg>
         
         {/* Glassmorphism overlay */}
         <div className="absolute inset-0 backdrop-blur-[0.5px] bg-background/20"></div>
@@ -97,7 +82,7 @@ const ServicesSection = () => {
             The 3 Pillars of Your
             <span className="gradient-text text-shimmer"> Lead Generation Machine</span>
           </h2>
-          <p className="text-xl text-foreground/80 max-w-3xl mx-auto breathing">
+          <p className="text-xl text-foreground/90 max-w-3xl mx-auto breathing">
             Our proven methodology combines cutting-edge technology, strategic design, and powerful positioning to create an unstoppable lead generation system.
           </p>
         </div>
@@ -106,11 +91,11 @@ const ServicesSection = () => {
           {services.map((service, index) => (
             <Card 
               key={service.title}
-              className={`bg-card/80 backdrop-blur-sm border ${service.borderColor} p-8 smart-hover interactive-glow magnetic-field particle-system animate-fade-up relative overflow-hidden`}
+              className={`bg-card/90 backdrop-blur-md border ${service.borderColor} p-8 smart-hover interactive-glow magnetic-field particle-system animate-fade-up relative overflow-hidden shadow-lg`}
               style={{ animationDelay: `${index * 0.2}s` }}
             >
               {/* Card background gradient */}
-              <div className="absolute inset-0 bg-gradient-to-br from-card/50 to-card/30 pointer-events-none"></div>
+              <div className="absolute inset-0 bg-gradient-to-br from-card/60 to-card/40 pointer-events-none"></div>
               
               {/* Content */}
               <div className="relative z-10">
@@ -124,7 +109,7 @@ const ServicesSection = () => {
                 <p className={`${service.color} font-medium mb-4 text-shimmer`}>{service.subtitle}</p>
 
                 {/* Description */}
-                <p className="text-foreground/80 mb-6 leading-relaxed">
+                <p className="text-foreground/90 mb-6 leading-relaxed">
                   {service.description}
                 </p>
 
@@ -133,7 +118,7 @@ const ServicesSection = () => {
                   {service.features.map((feature, featureIndex) => (
                     <li key={featureIndex} className="flex items-center space-x-3 animate-intelligent-hover" style={{ animationDelay: `${featureIndex * 0.1}s` }}>
                       <div className={`w-2 h-2 ${service.bgColor} rounded-full smart-pulse`}></div>
-                      <span className="text-sm text-foreground/80">{feature}</span>
+                      <span className="text-sm text-foreground/90">{feature}</span>
                     </li>
                   ))}
                 </ul>
