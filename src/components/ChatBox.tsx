@@ -93,19 +93,19 @@ const ChatBox = () => {
 
       {/* Chat Window */}
       {isOpen && (
-        <Card className="w-80 h-96 flex flex-col shadow-2xl border-0 animate-slide-in-bottom transform-gpu backdrop-blur-xl bg-gradient-to-br from-slate-900/95 to-purple-900/95 border border-purple-500/20 overflow-hidden relative">
+        <Card className="w-80 h-96 flex flex-col shadow-2xl border-0 animate-slide-in-bottom transform-gpu backdrop-blur-xl bg-card/95 border border-border overflow-hidden relative">
           {/* Animated background particles */}
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
-            <div className="absolute top-10 left-10 w-2 h-2 bg-purple-400/30 rounded-full animate-float" style={{ animationDelay: '0s' }}></div>
-            <div className="absolute top-20 right-16 w-1 h-1 bg-pink-400/40 rounded-full animate-float" style={{ animationDelay: '1s' }}></div>
-            <div className="absolute bottom-20 left-20 w-1.5 h-1.5 bg-blue-400/30 rounded-full animate-float" style={{ animationDelay: '2s' }}></div>
-            <div className="absolute bottom-10 right-10 w-1 h-1 bg-yellow-400/40 rounded-full animate-float" style={{ animationDelay: '1.5s' }}></div>
+            <div className="absolute top-10 left-10 w-2 h-2 bg-primary/30 rounded-full animate-float" style={{ animationDelay: '0s' }}></div>
+            <div className="absolute top-20 right-16 w-1 h-1 bg-accent/40 rounded-full animate-float" style={{ animationDelay: '1s' }}></div>
+            <div className="absolute bottom-20 left-20 w-1.5 h-1.5 bg-agency-blue/30 rounded-full animate-float" style={{ animationDelay: '2s' }}></div>
+            <div className="absolute bottom-10 right-10 w-1 h-1 bg-agency-orange/40 rounded-full animate-float" style={{ animationDelay: '1.5s' }}></div>
           </div>
 
           <ChatHeader onClose={() => setIsOpen(false)} />
 
           {/* Messages with enhanced background */}
-          <div className="flex-1 overflow-y-auto p-4 space-y-4 bg-gradient-to-br from-slate-800/50 to-purple-800/30 relative">
+          <div className="flex-1 overflow-y-auto p-4 space-y-4 bg-gradient-to-br from-muted/50 to-accent/10 relative">
             {/* Animated grid pattern */}
             <div className="absolute inset-0 opacity-10 bg-cyber-grid bg-grid animate-electric-flow"></div>
             

@@ -25,19 +25,19 @@ const ChatMessage = ({ message, index }: ChatMessageProps) => {
       <div className={`flex items-start space-x-3 max-w-[85%] ${message.sender === 'user' ? 'flex-row-reverse space-x-reverse' : ''}`}>
         <div className={`w-8 h-8 rounded-full flex items-center justify-center transition-all duration-500 hover:scale-125 ${
           message.sender === 'user' 
-            ? 'bg-gradient-to-r from-blue-500 to-purple-500 animate-pulse-scale shadow-lg shadow-blue-500/30' 
-            : 'bg-gradient-to-r from-green-500 to-teal-500 animate-float shadow-lg shadow-green-500/30'
+            ? 'bg-gradient-to-r from-primary to-accent animate-pulse-scale shadow-lg shadow-primary/30' 
+            : 'bg-gradient-to-r from-agency-green to-agency-blue animate-float shadow-lg shadow-agency-green/30'
         }`}>
           {message.sender === 'user' ? (
-            <User className="w-4 h-4 text-white" />
+            <User className="w-4 h-4 text-primary-foreground" />
           ) : (
             getBotIcon(message.emotion)
           )}
         </div>
         <div className={`p-4 rounded-2xl transition-all duration-500 hover:scale-105 transform backdrop-blur-sm border ${
           message.sender === 'user' 
-            ? 'bg-gradient-to-r from-blue-600/90 to-purple-600/90 text-white animate-slide-in-right border-blue-400/30 shadow-lg shadow-blue-500/20' 
-            : 'bg-gradient-to-r from-slate-700/90 to-slate-600/90 text-gray-100 animate-slide-in-left border-slate-500/30 shadow-lg shadow-slate-500/20'
+            ? 'bg-gradient-to-r from-primary/90 to-accent/90 text-primary-foreground animate-slide-in-right border-primary/30 shadow-lg shadow-primary/20' 
+            : 'bg-gradient-to-r from-muted/90 to-secondary/90 text-foreground animate-slide-in-left border-border shadow-lg shadow-muted/20'
         }`}>
           <div className="text-sm leading-relaxed animate-typing">{message.text}</div>
           <div className="text-xs opacity-70 mt-2 animate-fade-in animation-delay-500 flex items-center gap-1">
