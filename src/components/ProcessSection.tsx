@@ -71,8 +71,20 @@ const ProcessSection = () => {
   ];
 
   return (
-    <section id="process" className="py-24 bg-card/30 particle-system">
-      <div className="container-width section-padding">
+    <section 
+      id="process" 
+      className="py-24 relative overflow-hidden"
+      style={{
+        backgroundImage: 'url(/lovable-uploads/ac09df35-dc80-4459-992a-564f45d01330.png)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundAttachment: 'fixed'
+      }}
+    >
+      {/* Background overlay for readability */}
+      <div className="absolute inset-0 bg-background/90 backdrop-blur-sm"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-accent/10"></div>
+      <div className="container-width section-padding relative z-10">
         <div className="text-center mb-16 animate-fade-up">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-reveal">
             Our Proven 4-Step Process
