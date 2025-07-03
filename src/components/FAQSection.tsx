@@ -54,8 +54,20 @@ const FAQSection = () => {
   };
 
   return (
-    <section id="faq" className="py-24 bg-card/30">
-      <div className="container-width section-padding">
+    <section 
+      id="faq" 
+      className="py-24 relative overflow-hidden"
+      style={{
+        backgroundImage: 'url(/lovable-uploads/d4720920-04f7-4a35-93a1-41fb741ef2b2.png)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundAttachment: 'fixed'
+      }}
+    >
+      {/* Background overlay for readability */}
+      <div className="absolute inset-0 bg-background/85 backdrop-blur-sm"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-accent/10"></div>
+      <div className="container-width section-padding relative z-10">
         <div className="text-center mb-16 animate-fade-up">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             Frequently Asked
@@ -130,10 +142,10 @@ const FAQSection = () => {
                   Schedule a free strategy call to discuss your specific situation and see if we're the right fit.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <button className="bg-background text-primary hover:bg-background/90 px-8 py-3 rounded-lg font-semibold transition-colors">
+                  <button className="bg-background/20 border border-background/30 backdrop-blur-md text-background hover:bg-background/30 px-8 py-3 rounded-lg font-semibold transition-all duration-300 shadow-lg">
                     Schedule Free Call
                   </button>
-                  <button className="border border-background/20 hover:bg-background/10 px-8 py-3 rounded-lg font-semibold transition-colors">
+                  <button className="bg-background/10 border border-background/20 backdrop-blur-md hover:bg-background/20 px-8 py-3 rounded-lg font-semibold transition-all duration-300 shadow-lg">
                     Send Us a Message
                   </button>
                 </div>
