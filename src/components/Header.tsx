@@ -18,6 +18,9 @@ const Header = () => {
   const toolItems = [
     { label: 'Growth Predictor', href: '/business-growth-predictor' },
     { label: 'Lead Game', href: '/lead-generation-game' },
+    { label: 'AI Persona', href: '/ai-persona-generator' },
+    { label: 'Analytics', href: '/analytics-dashboard' },
+    { label: '3D Showcase', href: '/use-case-3d-carousel' },
   ];
 
   return (

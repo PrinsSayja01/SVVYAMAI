@@ -9,6 +9,9 @@ import Index from "./pages/Index";
 import Contact from "./pages/Contact";
 import BusinessGrowthPredictor from "./pages/BusinessGrowthPredictor";
 import LeadGenerationGame from "./pages/LeadGenerationGame";
+import AIPersonaGenerator from "./pages/AIPersonaGenerator";
+import AnalyticsDashboard from "./pages/AnalyticsDashboard";
+import UseCase3DCarousel from "./pages/UseCase3DCarousel";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -25,6 +28,9 @@ const App = () => (
             <Route path="/contact" element={<Contact />} />
             <Route path="/business-growth-predictor" element={<BusinessGrowthPredictor />} />
             <Route path="/lead-generation-game" element={<LeadGenerationGame />} />
+            <Route path="/ai-persona-generator" element={<AIPersonaGenerator />} />
+            <Route path="/analytics-dashboard" element={<AnalyticsDashboard />} />
+            <Route path="/use-case-3d-carousel" element={<UseCase3DCarousel />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
