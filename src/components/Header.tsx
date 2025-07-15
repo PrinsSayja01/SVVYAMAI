@@ -12,8 +12,12 @@ const Header = () => {
     { label: 'Process', href: '#process' },
     { label: 'Portfolio', href: '#portfolio' },
     { label: 'Testimonials', href: '#testimonials' },
-    { label: 'Pricing', href: '#pricing' },
     { label: 'FAQ', href: '#faq' },
+  ];
+
+  const toolItems = [
+    { label: 'Growth Predictor', href: '/business-growth-predictor' },
+    { label: 'Lead Game', href: '/lead-generation-game' },
   ];
 
   return (
@@ -35,6 +39,16 @@ const Header = () => {
                 key={item.label}
                 href={item.href}
                 className="text-foreground/80 hover:text-primary transition-colors duration-300 font-medium"
+              >
+                {item.label}
+              </a>
+            ))}
+            <div className="h-6 w-px bg-border mx-4"></div>
+            {toolItems.map((item) => (
+              <a
+                key={item.label}
+                href={item.href}
+                className="text-primary hover:text-primary/80 transition-colors duration-300 font-medium bg-primary/10 px-3 py-1 rounded-full text-sm"
               >
                 {item.label}
               </a>
@@ -72,6 +86,19 @@ const Header = () => {
                   {item.label}
                 </a>
               ))}
+              <div className="border-t border-border pt-4 mt-4">
+                <p className="text-sm text-muted-foreground mb-2">Interactive Tools</p>
+                {toolItems.map((item) => (
+                  <a
+                    key={item.label}
+                    href={item.href}
+                    className="text-primary hover:text-primary/80 transition-colors duration-300 font-medium block py-2"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    {item.label}
+                  </a>
+                ))}
+              </div>
               <div className="flex items-center justify-between mt-4">
                 <ThemeToggle />
                 <Button className="btn-primary flex-1 ml-4">
