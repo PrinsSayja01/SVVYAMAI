@@ -106,8 +106,8 @@ const ProcessSection = () => {
                 className={`flex flex-col md:flex-row items-center gap-8 animate-fade-up`}
                 style={{ animationDelay: `${index * 0.2}s` }}
               >
-                {/* Left Content (odd) or Right Content (even) */}
-                <div className={`w-full md:w-1/2 ${index % 2 === 0 ? 'md:text-right md:pr-12' : 'md:order-2 md:pl-12'}`}>
+                {/* Left Content (steps 1,3) or Right Content (steps 2,4) */}
+                <div className={`w-full md:w-1/2 ${index === 0 || index === 2 ? 'md:text-right md:pr-12' : 'md:order-2 md:pl-12'}`}>
                   <Card className={`bg-card border ${step.borderColor} p-8 smart-hover interactive-glow magnetic-field glassmorphism`}>
                     <div className="flex items-center space-x-4 mb-4">
                       <div className={`w-12 h-12 ${step.bgColor} rounded-xl flex items-center justify-center floating-element`}>
@@ -141,8 +141,8 @@ const ProcessSection = () => {
                   </div>
                 </div>
 
-                {/* Right Space (odd) or Left Space (even) */}
-                <div className={`w-full md:w-1/2 ${index % 2 === 0 ? 'md:order-2' : ''}`}></div>
+                {/* Right Space (steps 1,3) or Left Space (steps 2,4) */}
+                <div className={`w-full md:w-1/2 ${index === 0 || index === 2 ? 'md:order-2' : ''}`}></div>
               </div>
             ))}
           </div>
