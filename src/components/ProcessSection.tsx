@@ -94,25 +94,21 @@ const ProcessSection = () => {
           </p>
         </div>
 
-        {/* Steps */}
-        <div className="space-y-8">
-          {steps.map((step, index) => (
-            <div 
-              key={step.number}
-              className="animate-fade-up"
-              style={{ animationDelay: `${index * 0.2}s` }}
-            >
-              <Card className={`bg-card border ${step.borderColor} p-8 smart-hover interactive-glow magnetic-field glassmorphism`}>
-                <div className="flex items-start gap-6">
-                  {/* Step Number */}
-                  <div className="flex-shrink-0">
-                    <div className={`w-16 h-16 ${step.bgColor} border-4 ${step.borderColor} rounded-full flex items-center justify-center bg-background shadow-lg interactive-glow breathing fractal-bg`}>
-                      <span className={`text-xl font-bold ${step.color}`}>{step.number}</span>
-                    </div>
-                  </div>
-                  
-                  {/* Content */}
-                  <div className="flex-1">
+        {/* Timeline */}
+        <div className="relative">
+          {/* Connection Line */}
+          <div className="hidden md:block absolute top-8 left-1/2 transform -translate-x-1/2 w-px h-full bg-gradient-to-b from-primary via-accent to-agency-orange animate-smart-pulse"></div>
+
+          <div className="space-y-16">
+            {steps.map((step, index) => (
+              <div 
+                key={step.number}
+                className={`flex flex-col md:flex-row items-center gap-8 animate-fade-up`}
+                style={{ animationDelay: `${index * 0.2}s` }}
+              >
+                {/* Left Content (steps 1,3) or Right Content (steps 2,4) */}
+                <div className={`w-full md:w-1/2 ${index === 0 || index === 2 ? 'md:text-right md:pr-12' : 'md:order-2 md:pl-12'}`}>
+                  <Card className={`bg-card border ${step.borderColor} p-8 smart-hover interactive-glow magnetic-field glassmorphism`}>
                     <div className="flex items-center space-x-4 mb-4">
                       <div className={`w-12 h-12 ${step.bgColor} rounded-xl flex items-center justify-center floating-element`}>
                         <step.icon className={`w-6 h-6 ${step.color}`} />
@@ -135,11 +131,21 @@ const ProcessSection = () => {
                         </li>
                       ))}
                     </ul>
+                  </Card>
+                </div>
+
+                {/* Center Number */}
+                <div className="relative z-10 flex-shrink-0">
+                  <div className={`w-16 h-16 ${step.bgColor} border-4 ${step.borderColor} rounded-full flex items-center justify-center bg-background shadow-lg interactive-glow breathing fractal-bg`}>
+                    <span className={`text-xl font-bold ${step.color}`}>{step.number}</span>
                   </div>
                 </div>
-              </Card>
-            </div>
-          ))}
+
+                {/* Right Space (steps 1,3) or Left Space (steps 2,4) */}
+                <div className={`w-full md:w-1/2 ${index === 0 || index === 2 ? 'md:order-2' : ''}`}></div>
+              </div>
+            ))}
+          </div>
         </div>
 
         {/* Timeline Stats */}
