@@ -16,78 +16,78 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222 84% 4.9%;
 
-    --primary: 45 85% 35%;
-    --primary-foreground: 45 20% 95%;
+    --primary: 220 100% 45%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 45 30% 85%;
-    --secondary-foreground: 45 60% 15%;
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222 84% 4.9%;
 
-    --muted: 45 25% 88%;
-    --muted-foreground: 45 40% 35%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 46.9%;
 
-    --accent: 38 75% 35%;
-    --accent-foreground: 38 20% 95%;
+    --accent: 220 100% 40%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 45 40% 75%;
-    --input: 45 40% 75%;
-    --ring: 45 85% 35%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 220 100% 45%;
 
     --radius: 0.75rem;
 
-    /* Custom dark gold colors */
-    --agency-orange: 45 80% 40%;
-    --agency-blue: 45 80% 40%;
-    --agency-green: 45 80% 40%;
-    --agency-purple: 38 70% 40%;
+    /* Custom agency colors */
+    --agency-orange: 25 95% 53%;
+    --agency-blue: 220 100% 45%;
+    --agency-green: 220 100% 45%;
+    --agency-purple: 220 100% 35%;
     
-    /* Gradients - Dark Gold Theme */
-    --gradient-primary: linear-gradient(135deg, hsl(45 85% 25%) 0%, hsl(38 75% 20%) 100%);
-    --gradient-hero: linear-gradient(135deg, hsl(45 85% 30%) 0%, hsl(38 75% 25%) 100%);
-    --gradient-svvayam: linear-gradient(135deg, hsl(45 85% 20%) 0%, hsl(38 75% 15%) 50%, hsl(30 80% 10%) 100%);
+    /* Gradients - Futuristic Svvayam AI Theme */
+    --gradient-primary: linear-gradient(135deg, hsl(235 100% 20%) 0%, hsl(195 100% 50%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(235 100% 20%) 0%, hsl(195 100% 50%) 100%);
+    --gradient-svvayam: linear-gradient(135deg, hsl(235 100% 15%) 0%, hsl(195 100% 45%) 50%, hsl(285 100% 40%) 100%);
   }
 
   .dark {
-    --background: 45 30% 3%;
-    --foreground: 45 60% 85%;
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
 
-    --card: 45 25% 6%;
-    --card-foreground: 45 60% 85%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
 
-    --popover: 45 25% 6%;
-    --popover-foreground: 45 60% 85%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
 
-    --primary: 45 75% 45%;
-    --primary-foreground: 45 30% 8%;
+    --primary: 142 76% 36%;
+    --primary-foreground: 355 7% 97%;
 
-    --secondary: 45 20% 12%;
-    --secondary-foreground: 45 60% 85%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
 
-    --muted: 45 20% 12%;
-    --muted-foreground: 45 40% 55%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
 
-    --accent: 38 60% 45%;
-    --accent-foreground: 45 30% 8%;
+    --accent: 12 76% 61%;
+    --accent-foreground: 0 0% 98%;
 
     --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 45 60% 85%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 45 25% 18%;
-    --input: 45 25% 18%;
-    --ring: 45 75% 45%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 142 72% 29%;
 
-    /* Dark mode dark gold colors */
-    --agency-orange: 45 70% 50%;
-    --agency-blue: 45 70% 50%;
-    --agency-green: 45 70% 50%;
-    --agency-purple: 38 55% 50%;
+    /* Dark mode custom colors */
+    --agency-orange: 25 95% 53%;
+    --agency-blue: 142 76% 36%;
+    --agency-green: 142 76% 36%;
+    --agency-purple: 12 76% 61%;
     
-    /* Dark mode gradients - Dark Gold Theme */
-    --gradient-primary: linear-gradient(135deg, hsl(45 75% 30%) 0%, hsl(38 60% 25%) 100%);
-    --gradient-hero: linear-gradient(135deg, hsl(45 60% 15%) 0%, hsl(38 50% 12%) 100%);
-    --gradient-svvayam: linear-gradient(135deg, hsl(45 75% 25%) 0%, hsl(38 60% 20%) 50%, hsl(30 70% 15%) 100%);
+    /* Dark mode gradients - Svvayam AI Theme */
+    --gradient-primary: linear-gradient(135deg, hsl(235 100% 25%) 0%, hsl(195 100% 55%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(235 100% 8%) 0%, hsl(195 100% 20%) 100%);
+    --gradient-svvayam: linear-gradient(135deg, hsl(235 100% 10%) 0%, hsl(195 100% 35%) 50%, hsl(285 100% 30%) 100%);
   }
 
   * {
@@ -109,14 +109,6 @@
   
   .glass-input {
     @apply bg-background/40 backdrop-blur-md border border-border/50 focus:bg-background/60 transition-all duration-300;
-  }
-  
-  .glassmorphism {
-    @apply bg-card/80 backdrop-blur-xl border border-border/30 shadow-2xl;
-  }
-  
-  .dark .glassmorphism {
-    @apply bg-card/60 border-primary/20 shadow-primary/10;
   }
   
   /* Button Styles */
