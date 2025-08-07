@@ -53,14 +53,14 @@
     --background: 240 10% 3.9%;
     --foreground: 0 0% 98%;
 
-    --card: 240 10% 3.9%;
+    --card: 240 10% 8%;
     --card-foreground: 0 0% 98%;
 
-    --popover: 240 10% 3.9%;
+    --popover: 240 10% 8%;
     --popover-foreground: 0 0% 98%;
 
-    --primary: 142 76% 36%;
-    --primary-foreground: 355 7% 97%;
+    --primary: 195 100% 55%;
+    --primary-foreground: 240 10% 3.9%;
 
     --secondary: 240 3.7% 15.9%;
     --secondary-foreground: 0 0% 98%;
@@ -68,21 +68,21 @@
     --muted: 240 3.7% 15.9%;
     --muted-foreground: 240 5% 64.9%;
 
-    --accent: 12 76% 61%;
-    --accent-foreground: 0 0% 98%;
+    --accent: 285 100% 65%;
+    --accent-foreground: 240 10% 3.9%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 240 3.7% 15.9%;
-    --input: 240 3.7% 15.9%;
-    --ring: 142 72% 29%;
+    --border: 240 3.7% 20%;
+    --input: 240 3.7% 20%;
+    --ring: 195 100% 55%;
 
     /* Dark mode custom colors */
     --agency-orange: 25 95% 53%;
-    --agency-blue: 142 76% 36%;
+    --agency-blue: 195 100% 55%;
     --agency-green: 142 76% 36%;
-    --agency-purple: 12 76% 61%;
+    --agency-purple: 285 100% 65%;
     
     /* Dark mode gradients - Svvayam AI Theme */
     --gradient-primary: linear-gradient(135deg, hsl(235 100% 25%) 0%, hsl(195 100% 55%) 100%);
@@ -109,6 +109,14 @@
   
   .glass-input {
     @apply bg-background/40 backdrop-blur-md border border-border/50 focus:bg-background/60 transition-all duration-300;
+  }
+  
+  .glassmorphism {
+    @apply bg-card/80 backdrop-blur-xl border border-border/30 shadow-2xl;
+  }
+  
+  .dark .glassmorphism {
+    @apply bg-card/60 border-primary/20 shadow-primary/10;
   }
   
   /* Button Styles */
