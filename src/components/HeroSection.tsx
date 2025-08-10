@@ -61,28 +61,38 @@ const HeroSection = () => {
             {/* Trust Badge */}
             <div className="inline-flex items-center space-x-2 bg-primary/20 border border-primary/30 rounded-full px-4 py-2 mb-6 smart-hover interactive-glow breathing transition-all duration-300">
               <div className="w-2 h-2 bg-primary rounded-full smart-pulse"></div>
-              <span className="text-sm font-medium text-primary text-shimmer">Only 5 Spots Available This Quarter</span>
+              <span className="text-sm font-medium text-primary text-shimmer">Only 2 Spots Remaining This Quarter</span>
             </div>
 
             {/* Main Headline */}
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6 text-reveal magnetic-hover">
-              Your{' '}
-              <span className="gradient-text text-shimmer floating-element">24/7 Lead</span>
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mb-4 text-reveal magnetic-hover">
+              <span className="gradient-text text-shimmer floating-element">Svvayam AI</span>{' '}
+              <span className="text-2xl md:text-3xl lg:text-4xl text-foreground/70 font-serif">(स्वयम्)</span>
               <br />
-              Generation Machine
+              <span className="text-lg md:text-xl lg:text-2xl text-primary font-medium">
+                "Self-driven. Self-aware. Self-evolving."
+              </span>
             </h1>
+
+            {/* Sanskrit Meaning */}
+            <div className="bg-primary/10 border border-primary/20 rounded-lg p-4 mb-6 smart-hover interactive-glow">
+              <p className="text-sm text-primary font-medium mb-1">
+                From Sanskrit "स्वयम्" meaning automatic intelligence
+              </p>
+            </div>
 
             {/* Subheadline */}
             <p className="text-xl md:text-2xl text-foreground/80 mb-8 leading-relaxed breathing animate-intelligent-hover">
-              Transform your business with automated systems that capture, nurture, and convert high-quality leads while you sleep.
+              Svvayam AI is the next leap in business growth: an AI that thinks, learns, and acts entirely on its own. 
+              It captures, nurtures, and converts high-value opportunities 24/7, scaling your business while you sleep.
             </p>
 
             {/* Stats */}
             <div className="flex flex-wrap justify-center lg:justify-start gap-8 mb-8 morphing-bg rounded-2xl p-4 transition-all duration-300">
               {[
-                { value: "300%", label: "Average ROI" },
-                { value: "24/7", label: "Lead Capture" },
-                { value: "90%", label: "Less Manual Work" }
+                { value: "300%", label: "Average ROI Boost" },
+                { value: "24/7", label: "Opportunity Capture & Engagement" },
+                { value: "90%", label: "Reduction in Manual Workflows" }
               ].map((stat, index) => (
                 <div key={index} className="text-center smart-hover interactive-glow transition-all duration-300" style={{ animationDelay: `${index * 0.2}s` }}>
                   <div className="text-3xl font-bold gradient-text text-shimmer floating-element">{stat.value}</div>
@@ -94,17 +104,17 @@ const HeroSection = () => {
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8">
               <Button className="liquid-button group magnetic-field interactive-glow transition-all duration-300">
-                Get Your Lead Machine
+                Activate Your AI Growth Engine
                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform floating-element" />
               </Button>
               <Button variant="outline" className="smart-hover glassmorphism magnetic-field transition-all duration-300">
-                Watch Demo (2 min)
+                Watch 2-Minute Demo
               </Button>
             </div>
 
             {/* Social Proof - Animated company names */}
             <div className="pt-8 border-t border-border/30">
-              <p className="text-sm text-foreground/60 mb-4 breathing">Trusted by 200+ Growing Businesses</p>
+              <p className="text-sm text-foreground/60 mb-4 breathing">Trusted by 200+ forward-thinking companies worldwide</p>
               <div className="flex flex-wrap justify-center lg:justify-start gap-6 opacity-60">
                 {trustedCompanies.map((company, index) => (
                   <div 
@@ -120,6 +130,13 @@ const HeroSection = () => {
                   </div>
                 ))}
               </div>
+            </div>
+
+            {/* Brand Positioning Tagline */}
+            <div className="mt-8 pt-6 border-t border-border/20">
+              <p className="text-lg font-medium text-center lg:text-left gradient-text text-shimmer breathing">
+                Svvayam AI — The Autonomous Intelligence That Scales With You.
+              </p>
             </div>
           </div>
 
@@ -149,7 +166,7 @@ const HeroSection = () => {
                   <div className="glassmorphism rounded-lg p-4 smart-hover magnetic-field animate-intelligent-hover transition-all duration-300">
                     <div className="flex items-center space-x-2 mb-2">
                       <Users className="h-5 w-5 text-primary floating-element" />
-                      <span className="text-sm font-medium">New Leads</span>
+                      <span className="text-sm font-medium">New Opportunities</span>
                     </div>
                     <div className="text-2xl font-bold gradient-text text-shimmer">47</div>
                     <div className="text-xs text-foreground/60 breathing">+23% this week</div>
@@ -158,10 +175,10 @@ const HeroSection = () => {
                   <div className="glassmorphism rounded-lg p-4 smart-hover magnetic-field animate-intelligent-hover transition-all duration-300" style={{ animationDelay: '0.1s' }}>
                     <div className="flex items-center space-x-2 mb-2">
                       <Clock className="h-5 w-5 text-accent floating-element" />
-                      <span className="text-sm font-medium">Response Time</span>
+                      <span className="text-sm font-medium">Avg. Response Time</span>
                     </div>
                     <div className="text-2xl font-bold text-accent text-shimmer">2m</div>
-                    <div className="text-xs text-foreground/60 breathing">Automated</div>
+                    <div className="text-xs text-foreground/60 breathing">fully automated</div>
                   </div>
                 </div>
 
