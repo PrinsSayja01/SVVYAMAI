@@ -77,34 +77,36 @@ const Header = () => {
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="md:hidden py-4 border-t border-border">
-            <nav className="flex flex-col space-y-4">
+          <div className="md:hidden py-4 border-t border-border mobile-menu-enter">
+            <nav className="flex flex-col space-y-3 sm:space-y-4">
               {navItems.map((item) => (
                 <a
                   key={item.label}
                   href={item.href}
-                  className="text-foreground/80 hover:text-primary transition-colors duration-300 font-medium py-2"
+                  className="text-sm sm:text-base text-foreground/80 hover:text-primary transition-colors duration-300 font-medium py-2"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.label}
                 </a>
               ))}
-              <div className="border-t border-border pt-4 mt-4">
-                <p className="text-sm text-muted-foreground mb-2">Interactive Tools</p>
-                {toolItems.map((item) => (
-                  <a
-                    key={item.label}
-                    href={item.href}
-                    className="text-primary hover:text-primary/80 transition-colors duration-300 font-medium block py-2"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    {item.label}
-                  </a>
-                ))}
+              <div className="border-t border-border pt-3 sm:pt-4 mt-3 sm:mt-4">
+                <p className="text-xs sm:text-sm text-muted-foreground mb-2">Interactive Tools</p>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                  {toolItems.map((item) => (
+                    <a
+                      key={item.label}
+                      href={item.href}
+                      className="text-xs sm:text-sm text-primary hover:text-primary/80 transition-colors duration-300 font-medium block py-2 px-3 bg-primary/10 rounded-lg"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      {item.label}
+                    </a>
+                  ))}
+                </div>
               </div>
-              <div className="flex items-center justify-between mt-4">
+              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 mt-4 pt-3 sm:pt-4 border-t border-border">
                 <ThemeToggle />
-                <Button className="btn-primary flex-1 ml-4">
+                <Button className="btn-primary btn-responsive">
                   Activate Your AI
                 </Button>
               </div>

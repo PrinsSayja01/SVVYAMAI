@@ -85,7 +85,7 @@ const ChatBox = () => {
   };
 
   return (
-    <div className="fixed bottom-6 right-6 z-50">
+    <div className="fixed bottom-4 sm:bottom-6 right-4 sm:right-6 z-50">
       {/* Chat Toggle Button */}
       {!isOpen && (
         <ChatToggleButton onClick={() => setIsOpen(true)} />
@@ -93,7 +93,7 @@ const ChatBox = () => {
 
       {/* Chat Window */}
       {isOpen && (
-        <Card className="w-80 h-96 flex flex-col shadow-2xl border-0 animate-slide-in-bottom transform-gpu backdrop-blur-xl bg-card/95 border border-border overflow-hidden relative">
+        <Card className="w-72 sm:w-80 h-80 sm:h-96 flex flex-col shadow-2xl border-0 animate-slide-in-bottom transform-gpu backdrop-blur-xl bg-card/95 border border-border overflow-hidden relative">
           {/* Animated background particles */}
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
             <div className="absolute top-10 left-10 w-2 h-2 bg-primary/30 rounded-full animate-float" style={{ animationDelay: '0s' }}></div>

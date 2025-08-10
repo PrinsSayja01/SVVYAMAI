@@ -77,21 +77,21 @@ const ServicesSection = () => {
       </div>
 
       <div className="container-width section-padding relative z-10">
-        <div className="text-center mb-16 animate-fade-up">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-reveal">
+        <div className="text-center mb-12 sm:mb-14 lg:mb-16 animate-fade-up">
+          <h2 className="hero-title font-bold mb-4 sm:mb-6 text-reveal">
             The 3 Pillars of Your
             <span className="gradient-text text-shimmer"> AI Automation Machine</span>
           </h2>
-          <p className="text-xl text-foreground/90 max-w-3xl mx-auto breathing">
+          <p className="text-responsive-base text-foreground/90 max-w-3xl mx-auto breathing">
             Our proven methodology combines cutting-edge technology, strategic design, and powerful positioning to create an unstoppable AI automation system.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8 mb-16">
+        <div className="grid-responsive-cards mb-12 sm:mb-14 lg:mb-16">
           {services.map((service, index) => (
             <Card 
               key={service.title}
-              className={`bg-card/90 backdrop-blur-md border ${service.borderColor} p-8 smart-hover interactive-glow magnetic-field particle-system animate-fade-up relative overflow-hidden shadow-lg`}
+              className={`bg-card/90 backdrop-blur-md border ${service.borderColor} p-4 sm:p-6 lg:p-8 smart-hover interactive-glow magnetic-field particle-system animate-fade-up relative overflow-hidden shadow-lg`}
               style={{ animationDelay: `${index * 0.2}s` }}
             >
               {/* Card background gradient */}
@@ -100,33 +100,33 @@ const ServicesSection = () => {
               {/* Content */}
               <div className="relative z-10">
                 {/* Icon */}
-                <div className={`w-16 h-16 ${service.bgColor} backdrop-blur-sm rounded-2xl flex items-center justify-center mb-6 smart-pulse floating-element`}>
-                  <service.icon className={`w-8 h-8 ${service.color}`} />
+                <div className={`w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 ${service.bgColor} backdrop-blur-sm rounded-xl sm:rounded-2xl flex items-center justify-center mb-4 sm:mb-6 smart-pulse floating-element`}>
+                  <service.icon className={`w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8 ${service.color}`} />
                 </div>
 
                 {/* Title */}
-                <h3 className="text-2xl font-bold mb-2 magnetic-hover">{service.title}</h3>
-                <p className={`${service.color} font-medium mb-4 text-shimmer`}>{service.subtitle}</p>
+                <h3 className="text-lg sm:text-xl lg:text-2xl font-bold mb-2 magnetic-hover">{service.title}</h3>
+                <p className={`${service.color} font-medium mb-3 sm:mb-4 text-shimmer text-sm sm:text-base`}>{service.subtitle}</p>
 
                 {/* Description */}
-                <p className="text-foreground/90 mb-6 leading-relaxed">
+                <p className="text-sm sm:text-base text-foreground/90 mb-4 sm:mb-6 leading-relaxed">
                   {service.description}
                 </p>
 
                 {/* Features */}
-                <ul className="space-y-3 mb-8">
+                <ul className="space-y-2 sm:space-y-3 mb-6 sm:mb-8">
                   {service.features.map((feature, featureIndex) => (
-                    <li key={featureIndex} className="flex items-center space-x-3 animate-intelligent-hover" style={{ animationDelay: `${featureIndex * 0.1}s` }}>
-                      <div className={`w-2 h-2 ${service.bgColor} rounded-full smart-pulse`}></div>
-                      <span className="text-sm text-foreground/90">{feature}</span>
+                    <li key={featureIndex} className="flex items-center space-x-2 sm:space-x-3 animate-intelligent-hover" style={{ animationDelay: `${featureIndex * 0.1}s` }}>
+                      <div className={`w-1.5 h-1.5 sm:w-2 sm:h-2 ${service.bgColor} rounded-full smart-pulse flex-shrink-0`}></div>
+                      <span className="text-xs sm:text-sm text-foreground/90">{feature}</span>
                     </li>
                   ))}
                 </ul>
 
                 {/* CTA */}
-                <Button variant="ghost" className={`w-full liquid-button group/btn hover:${service.bgColor} hover:${service.color}`}>
+                <Button variant="ghost" className={`w-full liquid-button group/btn hover:${service.bgColor} hover:${service.color} text-sm sm:text-base`}>
                   Learn More
-                  <ArrowRight className="ml-2 w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+                  <ArrowRight className="ml-2 w-3 h-3 sm:w-4 sm:h-4 group-hover/btn:translate-x-1 transition-transform" />
                 </Button>
               </div>
             </Card>
@@ -134,23 +134,23 @@ const ServicesSection = () => {
         </div>
 
         {/* Bottom CTA */}
-        <div className="text-center animate-fade-up fractal-bg rounded-2xl relative overflow-hidden" style={{ animationDelay: '0.6s' }}>
+        <div className="text-center animate-fade-up fractal-bg rounded-xl sm:rounded-2xl relative overflow-hidden" style={{ animationDelay: '0.6s' }}>
           {/* CTA background with blur */}
           <div className="absolute inset-0 bg-gradient-to-r from-primary/20 via-accent/20 to-primary/20 blur-xl"></div>
           
-          <div className="bg-gradient-primary rounded-2xl p-8 md:p-12 text-background glassmorphism relative backdrop-blur-sm">
-            <h3 className="text-3xl md:text-4xl font-bold mb-4 text-reveal">
+          <div className="bg-gradient-primary rounded-xl sm:rounded-2xl p-6 sm:p-8 lg:p-12 text-background glassmorphism relative backdrop-blur-sm">
+            <h3 className="text-responsive-lg font-bold mb-3 sm:mb-4 text-reveal">
               Ready to Build Your AI Automation Machine?
             </h3>
-            <p className="text-xl opacity-90 mb-8 max-w-2xl mx-auto breathing">
+            <p className="text-sm sm:text-base lg:text-xl opacity-90 mb-6 sm:mb-8 max-w-2xl mx-auto breathing">
               Let's create a custom AI system that captures, nurtures, and converts high-quality opportunities for your business.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button className="liquid-button bg-agency-blue text-background hover:bg-agency-blue/90 px-8 py-4 text-lg font-semibold magnetic-field">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
+              <Button className="btn-responsive liquid-button bg-agency-blue text-background hover:bg-agency-blue/90 font-semibold magnetic-field">
                 Get Started Today
-                <ArrowRight className="ml-2 w-5 h-5" />
+                <ArrowRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5" />
               </Button>
-              <Button variant="outline" className="border-background/20 text-background hover:bg-background/10 px-8 py-4 text-lg font-semibold smart-hover backdrop-blur-sm">
+              <Button variant="outline" className="btn-responsive border-background/20 text-background hover:bg-background/10 font-semibold smart-hover backdrop-blur-sm">
                 Schedule Consultation
               </Button>
             </div>

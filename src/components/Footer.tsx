@@ -30,23 +30,23 @@ const Footer = () => {
     <footer className="bg-background border-t border-border">
       <div className="container-width section-padding">
         {/* Main Footer Content */}
-        <div className="grid lg:grid-cols-4 gap-12 py-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 lg:gap-12 py-12 sm:py-14 lg:py-16">
           {/* Company Info */}
-          <div className="lg:col-span-1">
-            <div className="flex items-center space-x-2 mb-6">
-              <div className="w-8 h-8 bg-gradient-primary rounded-lg flex items-center justify-center">
-                <span className="text-background font-bold text-sm">SA</span>
+          <div className="sm:col-span-2 lg:col-span-1">
+            <div className="flex items-center space-x-2 mb-4 sm:mb-6">
+              <div className="w-7 h-7 sm:w-8 sm:h-8 bg-gradient-primary rounded-lg flex items-center justify-center">
+                <span className="text-background font-bold text-xs sm:text-sm">SA</span>
               </div>
-              <span className="text-xl font-bold gradient-text">Svvayam AI</span>
+              <span className="text-lg sm:text-xl font-bold gradient-text">Svvayam AI</span>
             </div>
-            <p className="text-foreground/80 mb-6 leading-relaxed">
+            <p className="text-sm sm:text-base text-foreground/80 mb-4 sm:mb-6 leading-relaxed">
               We build 24/7 AI automation machines that transform businesses with Svvayam AI. 
-              Join 200+ companies generating 300%+ more qualified leads.
+              Join 200+ companies generating 300%+ more qualified opportunities.
             </p>
-            <div className="space-y-3">
+            <div className="space-y-2 sm:space-y-3">
               {trustElements.map((element, index) => (
-                <div key={index} className="flex items-center space-x-2 text-sm text-foreground/80">
-                  <element.icon className="w-4 h-4 text-primary" />
+                <div key={index} className="flex items-center space-x-2 text-xs sm:text-sm text-foreground/80">
+                  <element.icon className="w-3 h-3 sm:w-4 sm:h-4 text-primary flex-shrink-0" />
                   <span>{element.text}</span>
                 </div>
               ))}
@@ -55,13 +55,13 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-lg font-semibold mb-6">Quick Links</h3>
-            <ul className="space-y-3">
+            <h3 className="text-base sm:text-lg font-semibold mb-4 sm:mb-6">Quick Links</h3>
+            <ul className="space-y-2 sm:space-y-3">
               {quickLinks.map((link) => (
                 <li key={link.label}>
                   <a
                     href={link.href}
-                    className="text-foreground/80 hover:text-primary transition-colors duration-300 flex items-center group"
+                    className="text-sm sm:text-base text-foreground/80 hover:text-primary transition-colors duration-300 flex items-center group"
                   >
                     <span>{link.label}</span>
                     <ArrowRight className="w-3 h-3 ml-1 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-300" />
@@ -73,11 +73,11 @@ const Footer = () => {
 
           {/* Services */}
           <div>
-            <h3 className="text-lg font-semibold mb-6">Services</h3>
-            <ul className="space-y-3">
+            <h3 className="text-base sm:text-lg font-semibold mb-4 sm:mb-6">Services</h3>
+            <ul className="space-y-2 sm:space-y-3">
               {services.map((service) => (
                 <li key={service}>
-                  <span className="text-foreground/80 hover:text-primary transition-colors duration-300 cursor-pointer">
+                  <span className="text-sm sm:text-base text-foreground/80 hover:text-primary transition-colors duration-300 cursor-pointer">
                     {service}
                   </span>
                 </li>
@@ -86,25 +86,25 @@ const Footer = () => {
           </div>
 
           {/* Contact & CTA */}
-          <div>
-            <h3 className="text-lg font-semibold mb-6">Get Started</h3>
-            <div className="space-y-4 mb-6">
+          <div className="sm:col-span-2 lg:col-span-1">
+            <h3 className="text-base sm:text-lg font-semibold mb-4 sm:mb-6">Get Started</h3>
+            <div className="space-y-3 sm:space-y-4 mb-4 sm:mb-6">
               <div className="flex items-center space-x-2">
-                <Phone className="w-4 h-4 text-primary" />
-                <span className="text-foreground/80">(555) 123-LEADS</span>
+                <Phone className="w-3 h-3 sm:w-4 sm:h-4 text-primary flex-shrink-0" />
+                <span className="text-sm sm:text-base text-foreground/80">(555) 123-LEADS</span>
               </div>
-              <div className="text-sm text-foreground/60">
+              <div className="text-xs sm:text-sm text-foreground/60">
                 Monday - Friday: 9AM - 6PM EST<br />
                 Weekend: Emergency support available
               </div>
             </div>
             
-            <div className="bg-gradient-primary rounded-lg p-4 text-background">
-              <h4 className="font-semibold mb-2">Ready to Get Started?</h4>
-              <p className="text-sm opacity-90 mb-3">
+            <div className="bg-gradient-primary rounded-lg p-3 sm:p-4 text-background">
+              <h4 className="text-sm sm:text-base font-semibold mb-2">Ready to Get Started?</h4>
+              <p className="text-xs sm:text-sm opacity-90 mb-3">
                 Only 2 spots left this quarter
               </p>
-              <button className="bg-background text-primary hover:bg-background/90 px-4 py-2 rounded font-semibold text-sm w-full transition-colors">
+              <button className="bg-background text-primary hover:bg-background/90 px-3 sm:px-4 py-2 rounded font-semibold text-xs sm:text-sm w-full transition-colors">
                 Claim Your Spot
               </button>
             </div>
