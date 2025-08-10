@@ -19,11 +19,6 @@ export default {
 			}
 		},
 		extend: {
-			fontFamily: {
-				'sans': ['Inter', 'ui-sans-serif', 'system-ui'],
-				'poppins': ['Poppins', 'sans-serif'],
-				'devanagari': ['Noto Sans Devanagari', 'sans-serif'],
-			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',

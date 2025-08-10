@@ -64,37 +64,17 @@ const HeroSection = () => {
               <span className="text-sm font-medium text-primary text-shimmer">Only 5 Spots Available This Quarter</span>
             </div>
 
-            {/* Company Branding */}
-            <div className="mb-6 animate-fade-up">
-              <div className="text-center lg:text-left">
-                <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold leading-tight mb-4 text-reveal magnetic-hover">
-                  <span className="gradient-text text-shimmer floating-element font-['Poppins']">Svvayam</span>
-                  <br />
-                  <span className="text-3xl md:text-4xl lg:text-5xl text-foreground/90 font-['Noto_Sans_Devanagari']">(स्वयम्)</span>
-                  <br />
-                  <span className="gradient-text text-shimmer floating-element">AI</span>
-                </h1>
-                
-                {/* Company Tagline */}
-                <div className="text-xl md:text-2xl lg:text-3xl font-medium text-primary mb-4 breathing animate-intelligent-hover">
-                  "Self-driven. Self-aware. Self-evolving."
-                </div>
-                
-                {/* Sanskrit Meaning */}
-                <div className="glassmorphism rounded-xl p-4 mb-6 border border-primary/30 interactive-glow">
-                  <div className="text-lg font-semibold text-foreground mb-2 font-['Noto_Sans_Devanagari']">
-                    स्वयम् = Automatic Intelligence
-                  </div>
-                  <div className="text-base text-foreground/80 leading-relaxed">
-                    Harnessing AI that thinks, learns, and acts — on its own.
-                  </div>
-                </div>
-              </div>
-            </div>
+            {/* Main Headline */}
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6 text-reveal magnetic-hover">
+              Your{' '}
+              <span className="gradient-text text-shimmer floating-element">24/7 Lead</span>
+              <br />
+              Generation Machine
+            </h1>
 
-            {/* Main Value Proposition */}
+            {/* Subheadline */}
             <p className="text-xl md:text-2xl text-foreground/80 mb-8 leading-relaxed breathing animate-intelligent-hover">
-              Transform your business with automated intelligence that captures, nurtures, and converts high-quality leads while you sleep.
+              Transform your business with automated systems that capture, nurture, and convert high-quality leads while you sleep.
             </p>
 
             {/* Stats */}
