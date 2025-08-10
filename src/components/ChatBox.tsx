@@ -14,7 +14,7 @@ const ChatBox = () => {
   const [messages, setMessages] = useState<Message[]>([
     {
       id: '1',
-      text: "🚀 Hey there! I'm your AI lead generation specialist. Ready to 10x your business? Let's create some magic together!",
+      text: "🚀 Hey there! I'm your Svvayam AI specialist. Ready to 10x your business with autonomous intelligence? Let's create some magic together!",
       sender: 'bot',
       timestamp: new Date(),
       emotion: 'excited'

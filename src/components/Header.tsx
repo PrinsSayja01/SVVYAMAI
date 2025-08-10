@@ -28,12 +28,12 @@ const Header = () => {
       <div className="container-width section-padding">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <div className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-gradient-primary rounded-lg flex items-center justify-center">
-              <span className="text-background font-bold text-sm">LA</span>
-            </div>
-            <span className="text-xl font-bold gradient-text">LeadAgency</span>
+        <div className="flex items-center space-x-2">
+          <div className="w-8 h-8 bg-gradient-primary rounded-lg flex items-center justify-center">
+            <span className="text-background font-bold text-sm">SA</span>
           </div>
+          <span className="text-xl font-bold gradient-text">Svvayam AI</span>
+        </div>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
@@ -62,7 +62,7 @@ const Header = () => {
           <div className="hidden md:flex items-center space-x-4">
             <ThemeToggle />
             <Button className="btn-primary">
-              Get Your Lead Machine
+              Activate Your AI
             </Button>
           </div>
 
@@ -105,7 +105,7 @@ const Header = () => {
               <div className="flex items-center justify-between mt-4">
                 <ThemeToggle />
                 <Button className="btn-primary flex-1 ml-4">
-                  Get Your Lead Machine
+                  Activate Your AI
                 </Button>
               </div>
             </nav>

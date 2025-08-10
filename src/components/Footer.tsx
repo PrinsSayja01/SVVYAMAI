@@ -35,12 +35,12 @@ const Footer = () => {
           <div className="lg:col-span-1">
             <div className="flex items-center space-x-2 mb-6">
               <div className="w-8 h-8 bg-gradient-primary rounded-lg flex items-center justify-center">
-                <span className="text-background font-bold text-sm">LA</span>
+                <span className="text-background font-bold text-sm">SA</span>
               </div>
-              <span className="text-xl font-bold gradient-text">LeadAgency</span>
+              <span className="text-xl font-bold gradient-text">Svvayam AI</span>
             </div>
             <p className="text-foreground/80 mb-6 leading-relaxed">
-              We build 24/7 lead generation machines that transform businesses. 
+              We build 24/7 AI automation machines that transform businesses with Svvayam AI. 
               Join 200+ companies generating 300%+ more qualified leads.
             </p>
             <div className="space-y-3">
@@ -115,7 +115,7 @@ const Footer = () => {
         <div className="border-t border-border py-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="text-sm text-foreground/60">
-              © 2024 LeadAgency. All rights reserved.
+              © 2024 Svvayam AI. All rights reserved.
             </div>
             <div className="flex space-x-6 text-sm text-foreground/60">
               <a href="#" className="hover:text-primary transition-colors">Privacy Policy</a>

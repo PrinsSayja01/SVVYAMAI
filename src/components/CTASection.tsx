@@ -30,7 +30,7 @@ const CTASection = () => {
             
             <div className="relative z-10 max-w-4xl mx-auto">
               <h2 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-                Your Lead Generation Machine Awaits
+                Your AI Automation Machine Awaits
               </h2>
               <p className="text-xl md:text-2xl opacity-90 mb-8 leading-relaxed">
                 Join the exclusive group of businesses generating 300%+ more leads with our proven automation system.

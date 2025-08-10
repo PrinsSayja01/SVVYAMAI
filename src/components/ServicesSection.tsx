@@ -80,10 +80,10 @@ const ServicesSection = () => {
         <div className="text-center mb-16 animate-fade-up">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-reveal">
             The 3 Pillars of Your
-            <span className="gradient-text text-shimmer"> Lead Generation Machine</span>
+            <span className="gradient-text text-shimmer"> AI Automation Machine</span>
           </h2>
           <p className="text-xl text-foreground/90 max-w-3xl mx-auto breathing">
-            Our proven methodology combines cutting-edge technology, strategic design, and powerful positioning to create an unstoppable lead generation system.
+            Our proven methodology combines cutting-edge technology, strategic design, and powerful positioning to create an unstoppable AI automation system.
           </p>
         </div>
 
@@ -140,10 +140,10 @@ const ServicesSection = () => {
           
           <div className="bg-gradient-primary rounded-2xl p-8 md:p-12 text-background glassmorphism relative backdrop-blur-sm">
             <h3 className="text-3xl md:text-4xl font-bold mb-4 text-reveal">
-              Ready to Build Your Lead Generation Machine?
+              Ready to Build Your AI Automation Machine?
             </h3>
             <p className="text-xl opacity-90 mb-8 max-w-2xl mx-auto breathing">
-              Let's create a custom system that captures, nurtures, and converts high-quality leads for your business.
+              Let's create a custom AI system that captures, nurtures, and converts high-quality opportunities for your business.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button className="liquid-button bg-agency-blue text-background hover:bg-agency-blue/90 px-8 py-4 text-lg font-semibold magnetic-field">
