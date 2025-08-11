@@ -139,7 +139,7 @@ const FeaturesSection = () => {
 
   return (
     <section className="section-padding section-spacing bg-gradient-to-br from-background via-background to-secondary/20">
-      <div className="container-width">
+      <div className="container-width section-padding">
         <div className="text-center space-y-4 mb-12 sm:mb-16">
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold gradient-text">
             Interactive AI Tools

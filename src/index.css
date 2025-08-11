@@ -116,10 +116,18 @@
   
   /* Utility Classes */
   .container-width {
-    @apply max-w-7xl mx-auto;
+    @apply w-full mx-auto;
+  }
+  
+  .container-width-mobile {
+    @apply max-w-7xl mx-auto lg:max-w-none lg:mx-0 lg:w-full;
   }
   
   .section-padding {
+    @apply px-4 sm:px-6 lg:px-12 xl:px-16 2xl:px-24;
+  }
+  
+  .section-padding-mobile {
     @apply px-4 sm:px-6 lg:px-8;
   }
   
