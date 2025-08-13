@@ -114,43 +114,38 @@
     @apply bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 text-primary-foreground shadow-lg hover:shadow-xl transition-all duration-300;
   }
   
-  /* Responsive Container System */
-  .container-responsive {
-    @apply w-full mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16;
-    max-width: 1920px;
-  }
-
+  /* Utility Classes */
   .container-width {
-    @apply container-responsive;
+    @apply w-full mx-auto;
   }
-
+  
+  .container-width-mobile {
+    @apply max-w-7xl mx-auto lg:max-w-none lg:mx-0 lg:w-full;
+  }
+  
   .section-padding {
-    @apply py-8 sm:py-12 md:py-16 lg:py-20 xl:py-24;
+    @apply px-4 sm:px-6 lg:px-12 xl:px-16 2xl:px-24;
   }
-
-  .section-padding-sm {
-    @apply py-6 sm:py-8 md:py-10 lg:py-12;
+  
+  .section-padding-mobile {
+    @apply px-4 sm:px-6 lg:px-8;
   }
-
-  /* Mobile-First Button Styles */
-  .btn-responsive {
-    @apply px-4 py-2 sm:px-6 sm:py-3 md:px-8 md:py-4 text-sm sm:text-base;
-    @apply min-h-[44px] touch-manipulation;
+  
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent;
   }
-
-  .btn-primary {
-    @apply bg-gradient-to-r from-primary to-secondary text-primary-foreground;
-    @apply hover:from-primary/90 hover:to-secondary/90;
-    @apply transition-all duration-300 ease-in-out;
-    @apply shadow-lg hover:shadow-xl;
-    @apply btn-responsive rounded-full font-semibold;
+  
+  .bg-gradient-primary {
+    background: var(--gradient-primary);
   }
-
-  .btn-secondary {
-    @apply bg-secondary/10 text-secondary border border-secondary/20;
-    @apply hover:bg-secondary/20 hover:border-secondary/40;
-    @apply transition-all duration-300 ease-in-out;
-    @apply btn-responsive rounded-full font-medium;
+  
+  /* Responsive Text Classes */
+  .text-responsive-xl {
+    @apply text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl;
+  }
+  
+  .text-responsive-lg {
+    @apply text-lg sm:text-xl md:text-2xl lg:text-3xl;
   }
   
   .text-responsive-base {
