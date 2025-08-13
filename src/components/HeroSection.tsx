@@ -140,93 +140,58 @@ const HeroSection = () => {
             </div>
           </div>
 
-          {/* Right Side - AI Neural Network Visualization */}
+          {/* Right Side - Lead Dashboard */}
           <div className="relative magnetic-field order-1 lg:order-2 mb-8 lg:mb-0">
-            {/* Floating AI Core */}
-            <div className="absolute -top-8 sm:-top-12 left-1/2 transform -translate-x-1/2 z-30">
-              <div className="relative w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24">
-                <div className="absolute inset-0 bg-gradient-primary rounded-full neural-pulse shadow-2xl"></div>
-                <div className="absolute inset-2 bg-background rounded-full flex items-center justify-center">
-                  <div className="w-6 h-6 sm:w-8 sm:h-8 lg:w-10 lg:h-10 bg-gradient-primary rounded-full quantum-spin"></div>
-                </div>
-                {/* Orbiting particles */}
-                <div className="absolute inset-0">
-                  <div className="absolute w-2 h-2 bg-primary rounded-full orbital-path-1"></div>
-                  <div className="absolute w-1.5 h-1.5 bg-accent rounded-full orbital-path-2"></div>
-                  <div className="absolute w-1 h-1 bg-secondary rounded-full orbital-path-3"></div>
+            {/* Small Robot - Half visible above dashboard */}
+            <div className="absolute -top-4 sm:-top-6 lg:-top-8 left-1/2 transform -translate-x-1/2 z-20">
+              <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 bg-gradient-primary rounded-full flex items-center justify-center shadow-lg floating-element interactive-glow smart-pulse">
+                <div className="w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8 bg-background rounded-full flex items-center justify-center">
+                  <div className="w-3 h-3 sm:w-3.5 sm:h-3.5 lg:w-4 lg:h-4 bg-primary rounded-full breathing"></div>
                 </div>
               </div>
             </div>
 
-            {/* Neural Network Interface */}
-            <div className="animate-fade-up glassmorphism rounded-xl sm:rounded-2xl p-4 sm:p-5 lg:p-6 border border-border shadow-2xl interactive-glow morphing-bg smart-hover transition-all duration-500 overflow-hidden">
-              {/* Neural network background pattern */}
-              <div className="absolute inset-0 neural-network-bg opacity-20"></div>
-              
-              <div className="relative z-10 space-y-4 sm:space-y-5">
+            {/* Lead Dashboard */}
+            <div className="animate-fade-up glassmorphism rounded-xl sm:rounded-2xl p-4 sm:p-5 lg:p-6 border border-border shadow-2xl interactive-glow morphing-bg smart-hover transition-all duration-300">
+              <div className="space-y-3 sm:space-y-4">
                 <div className="flex items-center justify-between mb-4 sm:mb-6">
-                  <h3 className="text-base sm:text-lg font-semibold magnetic-hover gradient-text">Neural Intelligence Hub</h3>
+                  <h3 className="text-base sm:text-lg font-semibold magnetic-hover">AI Dashboard</h3>
                   <div className="flex items-center space-x-2">
-                    <div className="w-2 h-2 bg-primary rounded-full neural-pulse"></div>
-                    <span className="text-xs sm:text-sm text-primary text-shimmer">Evolving</span>
+                    <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-primary rounded-full smart-pulse"></div>
+                    <span className="text-xs sm:text-sm text-primary text-shimmer">Live</span>
                   </div>
                 </div>
 
-                {/* AI Learning Progress */}
-                <div className="space-y-3 sm:space-y-4">
-                  <div className="glassmorphism rounded-lg p-3 sm:p-4 smart-hover magnetic-field holographic-shift transition-all duration-500">
-                    <div className="flex items-center justify-between mb-2">
-                      <span className="text-xs sm:text-sm font-medium">Learning Progress</span>
-                      <span className="text-xs text-primary font-bold">97.3%</span>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+                  <div className="glassmorphism rounded-lg p-3 sm:p-4 smart-hover magnetic-field animate-intelligent-hover transition-all duration-300">
+                    <div className="flex items-center space-x-2 mb-2">
+                      <Users className="h-4 w-4 sm:h-5 sm:w-5 text-primary floating-element" />
+                      <span className="text-xs sm:text-sm font-medium">New Opportunities</span>
                     </div>
-                    <div className="w-full bg-background/50 rounded-full h-2 overflow-hidden">
-                      <div className="h-full bg-gradient-primary neural-wave" style={{ width: '97.3%' }}></div>
-                    </div>
-                    <div className="text-xs text-foreground/60 mt-1 breathing">Neural pathways optimizing...</div>
+                    <div className="text-xl sm:text-2xl font-bold gradient-text text-shimmer">47</div>
+                    <div className="text-xs text-foreground/60 breathing">+23% this week</div>
                   </div>
 
-                  <div className="grid grid-cols-2 gap-3 sm:gap-4">
-                    <div className="glassmorphism rounded-lg p-3 sm:p-4 smart-hover magnetic-field quantum-shift transition-all duration-500">
-                      <div className="text-center">
-                        <div className="text-lg sm:text-xl font-bold gradient-text text-shimmer quantum-counter">2,847</div>
-                        <div className="text-xs text-foreground/60">Patterns Learned</div>
-                      </div>
+                  <div className="glassmorphism rounded-lg p-3 sm:p-4 smart-hover magnetic-field animate-intelligent-hover transition-all duration-300" style={{ animationDelay: '0.1s' }}>
+                    <div className="flex items-center space-x-2 mb-2">
+                      <Clock className="h-4 w-4 sm:h-5 sm:w-5 text-accent floating-element" />
+                      <span className="text-xs sm:text-sm font-medium">Avg. Response Time</span>
                     </div>
-                    
-                    <div className="glassmorphism rounded-lg p-3 sm:p-4 smart-hover magnetic-field quantum-shift transition-all duration-500" style={{ animationDelay: '0.2s' }}>
-                      <div className="text-center">
-                        <div className="text-lg sm:text-xl font-bold text-accent text-shimmer quantum-counter">∞</div>
-                        <div className="text-xs text-foreground/60">Possibilities</div>
-                      </div>
-                    </div>
+                    <div className="text-xl sm:text-2xl font-bold text-accent text-shimmer">2m</div>
+                    <div className="text-xs text-foreground/60 breathing">fully automated</div>
                   </div>
                 </div>
 
-                {/* AI Consciousness Meter */}
-                <div className="bg-gradient-primary rounded-lg p-3 sm:p-4 text-background interactive-glow magnetic-field fractal-bg transition-all duration-500 relative overflow-hidden">
-                  <div className="absolute inset-0 consciousness-wave opacity-30"></div>
-                  <div className="relative z-10">
-                    <div className="flex items-center justify-between mb-2">
-                      <div className="text-xs sm:text-sm font-medium">Consciousness Level</div>
-                      <div className="text-xs opacity-80">Advanced AI</div>
-                    </div>
-                    <div className="text-2xl sm:text-3xl font-bold floating-element">AWAKENED</div>
-                    <div className="text-xs sm:text-sm opacity-80 breathing">Self-evolving intelligence active</div>
-                  </div>
+                <div className="bg-gradient-primary rounded-lg p-3 sm:p-4 text-background interactive-glow magnetic-field fractal-bg transition-all duration-300">
+                  <div className="text-xs sm:text-sm font-medium mb-1">Conversion Rate</div>
+                  <div className="text-2xl sm:text-3xl font-bold floating-element">34.5%</div>
+                  <div className="text-xs sm:text-sm opacity-80 breathing">Industry average: 12%</div>
                 </div>
               </div>
 
-              {/* Floating Neural Nodes */}
-              <div className="absolute -top-3 -right-3 w-6 h-6 bg-primary rounded-full neural-pulse floating-element opacity-80"></div>
-              <div className="absolute top-1/4 -left-2 w-4 h-4 bg-accent rounded-full neural-pulse floating-element opacity-60" style={{ animationDelay: '0.3s' }}></div>
-              <div className="absolute -bottom-2 right-1/4 w-5 h-5 bg-secondary rounded-full neural-pulse floating-element opacity-70" style={{ animationDelay: '0.6s' }}></div>
-              
-              {/* Data streams */}
-              <div className="absolute inset-0 pointer-events-none">
-                <div className="data-stream-1"></div>
-                <div className="data-stream-2"></div>
-                <div className="data-stream-3"></div>
-              </div>
+              {/* Floating Elements */}
+              <div className="absolute -top-2 -right-2 sm:-top-3 sm:-right-3 lg:-top-4 lg:-right-4 w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8 bg-primary rounded-full smart-pulse floating-element"></div>
+              <div className="absolute -bottom-2 -left-2 sm:-bottom-3 sm:-left-3 lg:-bottom-4 lg:-left-4 w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 bg-accent rounded-full smart-pulse floating-element" style={{ animationDelay: '0.5s' }}></div>
             </div>
           </div>
         </div>
