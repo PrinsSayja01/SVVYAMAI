@@ -83,7 +83,7 @@ const HeroSection = () => {
 
             {/* Subheadline */}
             <p className="hero-subtitle text-foreground/80 mb-6 sm:mb-8 leading-relaxed breathing animate-intelligent-hover">
-              Svvayam AI is the next leap in business growth: an AI that thinks, learns, and acts entirely on its own. 
+              Svvyam AI is the next leap in business growth: an AI that thinks, learns, and acts entirely on its own. 
               It captures, nurtures, and converts high-value opportunities 24/7, scaling your business while you sleep.
             </p>
 
@@ -135,7 +135,7 @@ const HeroSection = () => {
             {/* Brand Positioning Tagline */}
             <div className="mt-6 sm:mt-8 pt-4 sm:pt-6 border-t border-border/20">
               <p className="text-sm sm:text-base lg:text-lg font-medium text-center lg:text-left gradient-text text-shimmer breathing">
-                Svvayam AI — The Autonomous Intelligence That Scales With You.
+                Svvyam AI — The Autonomous Intelligence That Scales With You.
               </p>
             </div>
           </div>
