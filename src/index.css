@@ -3,89 +3,95 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Premium Digital Agency Design System - Light/Dark Theme */
+/* Professional Tech Color System - Light/Dark Theme */
 
 @layer base {
   :root {
-    --background: 0 0% 98%;
-    --foreground: 222 84% 4.9%;
+    /* Light Mode - Professional Tech Colors */
+    --background: 0 0% 100%; /* Pure White #FFFFFF */
+    --foreground: 0 0% 13%; /* Charcoal Black #212121 */
 
     --card: 0 0% 100%;
-    --card-foreground: 222 84% 4.9%;
+    --card-foreground: 0 0% 13%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222 84% 4.9%;
+    --popover-foreground: 0 0% 13%;
 
-    --primary: 220 100% 45%;
+    --primary: 207 79% 39%; /* Tech Blue #1565C0 */
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 40% 96%;
-    --secondary-foreground: 222 84% 4.9%;
+    --secondary: 200 18% 46%; /* Slate Gray #455A64 */
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 210 40% 96%;
-    --muted-foreground: 215 16% 46.9%;
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 46%; /* Mid Gray #757575 */
 
-    --accent: 220 100% 40%;
+    --accent: 207 79% 39%; /* Tech Blue for accents */
     --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 84.2% 60.2%;
+    --destructive: 4 90% 58%; /* Error Red #D32F2F */
     --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 220 100% 45%;
+    --success: 123 46% 34%; /* Success Green #388E3C */
+    --success-foreground: 0 0% 100%;
+
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 207 79% 39%;
 
     --radius: 0.75rem;
 
-    /* Custom agency colors */
-    --agency-orange: 25 95% 53%;
-    --agency-blue: 220 100% 45%;
-    --agency-green: 220 100% 45%;
-    --agency-purple: 220 100% 35%;
+    /* Custom tech colors */
+    --tech-blue: 207 79% 39%; /* #1565C0 */
+    --slate-gray: 200 18% 46%; /* #455A64 */
+    --mid-gray: 0 0% 46%; /* #757575 */
     
     /* Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(220 100% 45%) 0%, hsl(220 100% 35%) 100%);
-    --gradient-hero: linear-gradient(135deg, hsl(0 0% 98%) 0%, hsl(210 40% 96%) 100%);
+    --gradient-primary: linear-gradient(135deg, hsl(207 79% 39%) 0%, hsl(200 18% 46%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(0 0% 100%) 0%, hsl(0 0% 98%) 100%);
   }
 
   .dark {
-    --background: 240 10% 3.9%;
-    --foreground: 0 0% 98%;
+    /* Dark Mode - Professional Tech Colors */
+    --background: 0 0% 13%; /* Charcoal Black #212121 */
+    --foreground: 0 0% 88%; /* Light Gray #E0E0E0 */
 
-    --card: 240 10% 3.9%;
-    --card-foreground: 0 0% 98%;
+    --card: 0 0% 18%; /* Slightly lighter than background #2E2E2E */
+    --card-foreground: 0 0% 88%;
 
-    --popover: 240 10% 3.9%;
-    --popover-foreground: 0 0% 98%;
+    --popover: 0 0% 18%;
+    --popover-foreground: 0 0% 88%;
 
-    --primary: 142 76% 36%;
-    --primary-foreground: 355 7% 97%;
+    --primary: 207 79% 39%; /* Tech Blue #1565C0 */
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 240 3.7% 15.9%;
-    --secondary-foreground: 0 0% 98%;
+    --secondary: 200 18% 46%; /* Slate Gray #455A64 */
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 240 3.7% 15.9%;
-    --muted-foreground: 240 5% 64.9%;
+    --muted: 0 0% 18%;
+    --muted-foreground: 0 0% 46%; /* Mid Gray #757575 */
 
-    --accent: 12 76% 61%;
-    --accent-foreground: 0 0% 98%;
+    --accent: 207 84% 56%; /* Lighter Tech Blue for dark mode #1976D2 */
+    --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
+    --destructive: 4 90% 58%; /* Error Red #D32F2F */
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 240 3.7% 15.9%;
-    --input: 240 3.7% 15.9%;
-    --ring: 142 72% 29%;
+    --success: 123 46% 34%; /* Success Green #388E3C */
+    --success-foreground: 0 0% 100%;
 
-    /* Dark mode custom colors */
-    --agency-orange: 25 95% 53%;
-    --agency-blue: 142 76% 36%;
-    --agency-green: 142 76% 36%;
-    --agency-purple: 12 76% 61%;
+    --border: 0 0% 18%;
+    --input: 0 0% 18%;
+    --ring: 207 79% 39%;
+
+    /* Dark mode tech colors */
+    --tech-blue: 207 79% 39%;
+    --slate-gray: 200 18% 46%;
+    --mid-gray: 0 0% 46%;
     
     /* Dark mode gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(142 76% 36%) 0%, hsl(12 76% 61%) 100%);
-    --gradient-hero: linear-gradient(135deg, hsl(240 10% 3.9%) 0%, hsl(240 3.7% 15.9%) 100%);
+    --gradient-primary: linear-gradient(135deg, hsl(207 79% 39%) 0%, hsl(207 84% 56%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(0 0% 13%) 0%, hsl(0 0% 18%) 100%);
   }
 
   * {
