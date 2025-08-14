@@ -36,12 +36,12 @@ const Footer = () => {
             <div className="flex items-center space-x-3 mb-4 sm:mb-6">
               <img 
                 src="/lovable-uploads/1a31cf75-6835-4315-a0aa-5c0948bac019.png" 
-                alt="Svvyam AI Logo" 
+                alt="Svvayam AI Logo" 
                 className="h-8 sm:h-10 w-auto object-contain"
               />
             </div>
             <p className="text-sm sm:text-base text-foreground/80 mb-4 sm:mb-6 leading-relaxed">
-              We build 24/7 AI automation machines that transform businesses with Svvyam AI. 
+              We build 24/7 AI automation machines that transform businesses with Svvayam AI. 
               Join 200+ companies generating 300%+ more qualified opportunities.
             </p>
             <div className="space-y-2 sm:space-y-3">
@@ -116,7 +116,7 @@ const Footer = () => {
         <div className="border-t border-border py-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="text-sm text-foreground/60">
-              © 2024 Svvyam AI. All rights reserved.
+              © 2024 Svvayam AI. All rights reserved.
             </div>
             <div className="flex space-x-6 text-sm text-foreground/60">
               <a href="#" className="hover:text-primary transition-colors">Privacy Policy</a>

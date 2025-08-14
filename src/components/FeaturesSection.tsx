@@ -145,7 +145,7 @@ const FeaturesSection = () => {
             Interactive AI Tools
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
-            Experience the power of Svvyam AI through our suite of interactive tools designed to transform your business operations
+            Experience the power of Svvayam AI through our suite of interactive tools designed to transform your business operations
           </p>
         </div>
 

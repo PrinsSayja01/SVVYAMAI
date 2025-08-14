@@ -32,7 +32,7 @@ const Header = () => {
         <div className="flex items-center space-x-3">
           <img 
             src="/lovable-uploads/1a31cf75-6835-4315-a0aa-5c0948bac019.png" 
-            alt="Svvyam AI Logo" 
+            alt="Svvayam AI Logo" 
             className="h-10 w-auto object-contain"
           />
         </div>

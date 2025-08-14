@@ -83,7 +83,7 @@ const Contact = () => {
               </div>
 
               <h1 className="hero-title font-bold mb-6 text-reveal">
-                <span className="gradient-text text-shimmer floating-element">Svvyam AI</span>{' '}
+                <span className="gradient-text text-shimmer floating-element">Svvayam AI</span>{' '}
                 <span className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-foreground/70 font-serif block sm:inline">(स्वयम्)</span>
                 <br />
                 <span className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-primary font-medium block mt-4">
@@ -128,7 +128,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <h3 className="text-2xl font-bold gradient-text">Neural Connection</h3>
-                      <p className="text-sm text-foreground/60">Establish direct link with Svvyam AI</p>
+                      <p className="text-sm text-foreground/60">Establish direct link with Svvayam AI</p>
                     </div>
                   </div>
 
@@ -175,7 +175,7 @@ const Contact = () => {
                         value={formData.message}
                         onChange={handleInputChange}
                         className="glassmorphism border-primary/20 focus:border-primary min-h-32"
-                        placeholder="Tell us about your business goals and how Svvyam AI can help you evolve..."
+                        placeholder="Tell us about your business goals and how Svvayam AI can help you evolve..."
                       />
                     </div>
 
@@ -286,12 +286,12 @@ const Contact = () => {
                 Ready to Evolve Your Business?
               </h2>
               <p className="text-lg sm:text-xl text-foreground/80 mb-8 max-w-3xl mx-auto">
-                Join the autonomous intelligence revolution. Let Svvyam AI transform your business operations while you focus on growth.
+                Join the autonomous intelligence revolution. Let Svvayam AI transform your business operations while you focus on growth.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button className="btn-primary liquid-button group px-8 py-4 text-lg">
-                  Activate Svvyam AI
+                  Activate Svvayam AI
                   <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </Button>
                 <Button variant="outline" className="border-primary text-primary hover:bg-primary/10 px-8 py-4 text-lg smart-hover">
