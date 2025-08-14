@@ -29,11 +29,12 @@ const Header = () => {
       <div className="container-width section-padding">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-        <div className="flex items-center space-x-2">
-          <div className="w-8 h-8 bg-gradient-primary rounded-lg flex items-center justify-center">
-            <span className="text-background font-bold text-sm">SA</span>
-          </div>
-          <span className="text-xl font-bold gradient-text">Svvayam AI</span>
+        <div className="flex items-center space-x-3">
+          <img 
+            src="/lovable-uploads/1a31cf75-6835-4315-a0aa-5c0948bac019.png" 
+            alt="Svvayam AI Logo" 
+            className="h-10 w-auto object-contain"
+          />
         </div>
 
           {/* Desktop Navigation */}

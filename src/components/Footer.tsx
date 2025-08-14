@@ -33,11 +33,12 @@ const Footer = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 lg:gap-12 py-12 sm:py-14 lg:py-16">
           {/* Company Info */}
           <div className="sm:col-span-2 lg:col-span-1">
-            <div className="flex items-center space-x-2 mb-4 sm:mb-6">
-              <div className="w-7 h-7 sm:w-8 sm:h-8 bg-gradient-primary rounded-lg flex items-center justify-center">
-                <span className="text-background font-bold text-xs sm:text-sm">SA</span>
-              </div>
-              <span className="text-lg sm:text-xl font-bold gradient-text">Svvayam AI</span>
+            <div className="flex items-center space-x-3 mb-4 sm:mb-6">
+              <img 
+                src="/lovable-uploads/1a31cf75-6835-4315-a0aa-5c0948bac019.png" 
+                alt="Svvayam AI Logo" 
+                className="h-8 sm:h-10 w-auto object-contain"
+              />
             </div>
             <p className="text-sm sm:text-base text-foreground/80 mb-4 sm:mb-6 leading-relaxed">
               We build 24/7 AI automation machines that transform businesses with Svvayam AI. 
