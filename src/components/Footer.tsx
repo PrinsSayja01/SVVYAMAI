@@ -1,56 +1,50 @@
-
 import { ArrowRight, Phone, Clock, Star, Shield } from 'lucide-react';
-
 const Footer = () => {
-  const quickLinks = [
-    { label: 'Services', href: '#services' },
-    { label: 'Process', href: '#process' },
-    { label: 'Portfolio', href: '#portfolio' },
-    { label: 'Testimonials', href: '#testimonials' },
-    { label: 'Pricing', href: '#pricing' },
-    { label: 'FAQ', href: '#faq' },
-  ];
-
-  const services = [
-    'AI Automation',
-    'Web Design',
-    'Brand Strategy',
-    'Lead Generation',
-    'CRM Integration',
-    'Email Marketing'
-  ];
-
-  const trustElements = [
-    { icon: Shield, text: '90-Day Guarantee' },
-    { icon: Star, text: '98% Client Satisfaction' },
-    { icon: Clock, text: '24/7 Support' }
-  ];
-
-  return (
-    <footer className="bg-background border-t border-border">
+  const quickLinks = [{
+    label: 'Services',
+    href: '#services'
+  }, {
+    label: 'Process',
+    href: '#process'
+  }, {
+    label: 'Portfolio',
+    href: '#portfolio'
+  }, {
+    label: 'Testimonials',
+    href: '#testimonials'
+  }, {
+    label: 'Pricing',
+    href: '#pricing'
+  }, {
+    label: 'FAQ',
+    href: '#faq'
+  }];
+  const services = ['AI Automation', 'Web Design', 'Brand Strategy', 'Lead Generation', 'CRM Integration', 'Email Marketing'];
+  const trustElements = [{
+    icon: Shield,
+    text: '90-Day Guarantee'
+  }, {
+    icon: Star,
+    text: '98% Client Satisfaction'
+  }, {
+    icon: Clock,
+    text: '24/7 Support'
+  }];
+  return <footer className="bg-background border-t border-border">
       <div className="container-width section-padding">
         {/* Main Footer Content */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 lg:gap-12 py-12 sm:py-14 lg:py-16">
           {/* Company Info */}
           <div className="sm:col-span-2 lg:col-span-1">
             <div className="flex items-center space-x-3 mb-4 sm:mb-6">
-              <img 
-                src="/lovable-uploads/1a31cf75-6835-4315-a0aa-5c0948bac019.png" 
-                alt="Svvayam AI Logo" 
-                className="h-8 sm:h-10 w-auto object-contain"
-              />
+              
             </div>
-            <p className="text-sm sm:text-base text-foreground/80 mb-4 sm:mb-6 leading-relaxed">
-              We build 24/7 AI automation machines that transform businesses with Svvayam AI. 
-              Join 200+ companies generating 300%+ more qualified opportunities.
-            </p>
+            <p className="text-sm sm:text-base text-foreground/80 mb-4 sm:mb-6 leading-relaxed">We build 24/7 AI automation machines that transform businesses with Svvyam AI. Join 200+ companies generating 300%+ more qualified opportunities.</p>
             <div className="space-y-2 sm:space-y-3">
-              {trustElements.map((element, index) => (
-                <div key={index} className="flex items-center space-x-2 text-xs sm:text-sm text-foreground/80">
+              {trustElements.map((element, index) => <div key={index} className="flex items-center space-x-2 text-xs sm:text-sm text-foreground/80">
                   <element.icon className="w-3 h-3 sm:w-4 sm:h-4 text-primary flex-shrink-0" />
                   <span>{element.text}</span>
-                </div>
-              ))}
+                </div>)}
             </div>
           </div>
 
@@ -58,17 +52,12 @@ const Footer = () => {
           <div>
             <h3 className="text-base sm:text-lg font-semibold mb-4 sm:mb-6">Quick Links</h3>
             <ul className="space-y-2 sm:space-y-3">
-              {quickLinks.map((link) => (
-                <li key={link.label}>
-                  <a
-                    href={link.href}
-                    className="text-sm sm:text-base text-foreground/80 hover:text-primary transition-colors duration-300 flex items-center group"
-                  >
+              {quickLinks.map(link => <li key={link.label}>
+                  <a href={link.href} className="text-sm sm:text-base text-foreground/80 hover:text-primary transition-colors duration-300 flex items-center group">
                     <span>{link.label}</span>
                     <ArrowRight className="w-3 h-3 ml-1 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-300" />
                   </a>
-                </li>
-              ))}
+                </li>)}
             </ul>
           </div>
 
@@ -76,13 +65,11 @@ const Footer = () => {
           <div>
             <h3 className="text-base sm:text-lg font-semibold mb-4 sm:mb-6">Services</h3>
             <ul className="space-y-2 sm:space-y-3">
-              {services.map((service) => (
-                <li key={service}>
+              {services.map(service => <li key={service}>
                   <span className="text-sm sm:text-base text-foreground/80 hover:text-primary transition-colors duration-300 cursor-pointer">
                     {service}
                   </span>
-                </li>
-              ))}
+                </li>)}
             </ul>
           </div>
 
@@ -134,8 +121,6 @@ const Footer = () => {
           </p>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
-
 export default Footer;

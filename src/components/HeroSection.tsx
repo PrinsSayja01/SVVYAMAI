@@ -1,22 +1,11 @@
-
 import { useState, useEffect, lazy, Suspense } from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Users, Clock } from 'lucide-react';
 
 // Lazy load heavy components
 const SplineViewer = lazy(() => Promise.resolve({
-  default: () => (
-    <iframe 
-      src='https://my.spline.design/genkubgreetingrobot-DwrKsTH7sYeMFIfRCIKDwinY/' 
-      frameBorder='0' 
-      width='100%' 
-      height='100%'
-      className="absolute inset-0 w-full h-full object-cover"
-      loading="lazy"
-    />
-  )
+  default: () => <iframe src='https://my.spline.design/genkubgreetingrobot-DwrKsTH7sYeMFIfRCIKDwinY/' frameBorder='0' width='100%' height='100%' className="absolute inset-0 w-full h-full object-cover" loading="lazy" />
 }));
-
 const HeroSection = () => {
   const [currentCompany, setCurrentCompany] = useState(0);
   const [isLoaded, setIsLoaded] = useState(false);
@@ -25,9 +14,8 @@ const HeroSection = () => {
   // Auto-rotate trusted companies
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentCompany((prev) => (prev + 1) % trustedCompanies.length);
+      setCurrentCompany(prev => (prev + 1) % trustedCompanies.length);
     }, 2000);
-    
     return () => clearInterval(interval);
   }, []);
 
@@ -36,14 +24,10 @@ const HeroSection = () => {
     const timer = setTimeout(() => setIsLoaded(true), 100);
     return () => clearTimeout(timer);
   }, []);
-
-  return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+  return <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Optimized 3D Background */}
       <div className="absolute inset-0 w-full h-full">
-        <Suspense fallback={
-          <div className="absolute inset-0 w-full h-full bg-gradient-hero animate-pulse" />
-        }>
+        <Suspense fallback={<div className="absolute inset-0 w-full h-full bg-gradient-hero animate-pulse" />}>
           {isLoaded && <SplineViewer />}
         </Suspense>
       </div>
@@ -66,7 +50,7 @@ const HeroSection = () => {
 
             {/* Main Headline */}
             <h1 className="hero-title font-bold leading-tight mb-3 sm:mb-4 text-reveal magnetic-hover">
-              <span className="gradient-text text-shimmer floating-element">Svvayam AI</span>{' '}
+              <span className="gradient-text text-shimmer floating-element">Svvyam AI</span>{' '}
               <span className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl text-foreground/70 font-serif block sm:inline">(स्वयम्)</span>
               <br />
               <span className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-primary font-medium block mt-2">
@@ -89,16 +73,21 @@ const HeroSection = () => {
 
             {/* Stats */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 mb-6 sm:mb-8 morphing-bg rounded-2xl p-3 sm:p-4 transition-all duration-300">
-              {[
-                { value: "300%", label: "Average ROI Boost" },
-                { value: "24/7", label: "Opportunity Capture & Engagement" },
-                { value: "90%", label: "Reduction in Manual Workflows" }
-              ].map((stat, index) => (
-                <div key={index} className="text-center smart-hover interactive-glow transition-all duration-300" style={{ animationDelay: `${index * 0.2}s` }}>
+              {[{
+              value: "300%",
+              label: "Average ROI Boost"
+            }, {
+              value: "24/7",
+              label: "Opportunity Capture & Engagement"
+            }, {
+              value: "90%",
+              label: "Reduction in Manual Workflows"
+            }].map((stat, index) => <div key={index} className="text-center smart-hover interactive-glow transition-all duration-300" style={{
+              animationDelay: `${index * 0.2}s`
+            }}>
                   <div className="text-xl sm:text-2xl lg:text-3xl font-bold gradient-text text-shimmer floating-element">{stat.value}</div>
                   <div className="text-xs sm:text-sm text-foreground/60">{stat.label}</div>
-                </div>
-              ))}
+                </div>)}
             </div>
 
             {/* CTA Buttons */}
@@ -116,27 +105,17 @@ const HeroSection = () => {
             <div className="pt-6 sm:pt-8 border-t border-border/30">
               <p className="text-xs sm:text-sm text-foreground/60 mb-3 sm:mb-4 breathing">Trusted by 200+ forward-thinking companies worldwide</p>
               <div className="flex flex-wrap justify-center lg:justify-start gap-3 sm:gap-4 lg:gap-6 opacity-60">
-                {trustedCompanies.map((company, index) => (
-                  <div 
-                    key={company} 
-                    className={`bg-foreground/10 rounded px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-medium smart-hover animate-intelligent-hover transition-all duration-500 ${
-                      index === currentCompany 
-                        ? 'scale-110 bg-primary/20 text-primary border border-primary/30 shadow-lg' 
-                        : 'scale-100'
-                    }`}
-                    style={{ animationDelay: `${index * 0.1}s` }}
-                  >
+                {trustedCompanies.map((company, index) => <div key={company} className={`bg-foreground/10 rounded px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-medium smart-hover animate-intelligent-hover transition-all duration-500 ${index === currentCompany ? 'scale-110 bg-primary/20 text-primary border border-primary/30 shadow-lg' : 'scale-100'}`} style={{
+                animationDelay: `${index * 0.1}s`
+              }}>
                     {company}
-                  </div>
-                ))}
+                  </div>)}
               </div>
             </div>
 
             {/* Brand Positioning Tagline */}
             <div className="mt-6 sm:mt-8 pt-4 sm:pt-6 border-t border-border/20">
-              <p className="text-sm sm:text-base lg:text-lg font-medium text-center lg:text-left gradient-text text-shimmer breathing">
-                Svvayam AI — The Autonomous Intelligence That Scales With You.
-              </p>
+              <p className="text-sm sm:text-base lg:text-lg font-medium text-center lg:text-left gradient-text text-shimmer breathing">Svvyam AI — The Autonomous Intelligence That Scales With You.</p>
             </div>
           </div>
 
@@ -180,7 +159,9 @@ const HeroSection = () => {
                       <span className="text-xs text-primary font-bold">97.3%</span>
                     </div>
                     <div className="w-full bg-background/50 rounded-full h-2 overflow-hidden">
-                      <div className="h-full bg-gradient-primary neural-wave" style={{ width: '97.3%' }}></div>
+                      <div className="h-full bg-gradient-primary neural-wave" style={{
+                      width: '97.3%'
+                    }}></div>
                     </div>
                     <div className="text-xs text-foreground/60 mt-1 breathing">Neural pathways optimizing...</div>
                   </div>
@@ -193,7 +174,9 @@ const HeroSection = () => {
                       </div>
                     </div>
                     
-                    <div className="glassmorphism rounded-lg p-3 sm:p-4 smart-hover magnetic-field quantum-shift transition-all duration-500" style={{ animationDelay: '0.2s' }}>
+                    <div className="glassmorphism rounded-lg p-3 sm:p-4 smart-hover magnetic-field quantum-shift transition-all duration-500" style={{
+                    animationDelay: '0.2s'
+                  }}>
                       <div className="text-center">
                         <div className="text-lg sm:text-xl font-bold text-accent text-shimmer quantum-counter">∞</div>
                         <div className="text-xs text-foreground/60">Possibilities</div>
@@ -218,8 +201,12 @@ const HeroSection = () => {
 
               {/* Floating Neural Nodes */}
               <div className="absolute -top-3 -right-3 w-6 h-6 bg-primary rounded-full neural-pulse floating-element opacity-80"></div>
-              <div className="absolute top-1/4 -left-2 w-4 h-4 bg-accent rounded-full neural-pulse floating-element opacity-60" style={{ animationDelay: '0.3s' }}></div>
-              <div className="absolute -bottom-2 right-1/4 w-5 h-5 bg-secondary rounded-full neural-pulse floating-element opacity-70" style={{ animationDelay: '0.6s' }}></div>
+              <div className="absolute top-1/4 -left-2 w-4 h-4 bg-accent rounded-full neural-pulse floating-element opacity-60" style={{
+              animationDelay: '0.3s'
+            }}></div>
+              <div className="absolute -bottom-2 right-1/4 w-5 h-5 bg-secondary rounded-full neural-pulse floating-element opacity-70" style={{
+              animationDelay: '0.6s'
+            }}></div>
               
               {/* Data streams */}
               <div className="absolute inset-0 pointer-events-none">
@@ -231,8 +218,6 @@ const HeroSection = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default HeroSection;
