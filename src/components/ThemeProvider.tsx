@@ -7,6 +7,7 @@ type Theme = 'dark' | 'light' | 'system';
 type ThemeProviderContextType = {
   theme: Theme;
   setTheme: (theme: Theme) => void;
+  currentTheme: 'dark' | 'light';
 };
 
 const ThemeProviderContext = createContext<ThemeProviderContextType | undefined>(undefined);
@@ -24,6 +25,7 @@ export function ThemeProvider({
     () => (localStorage.getItem(storageKey) as Theme) || defaultTheme
   );
   const [isFirstLoad, setIsFirstLoad] = useState(true);
+  const [currentTheme, setCurrentTheme] = useState<'dark' | 'light'>('light');
 
   useEffect(() => {
     const root = window.document.documentElement;
@@ -36,6 +38,7 @@ export function ThemeProvider({
         : 'light';
 
       root.classList.add(systemTheme);
+      setCurrentTheme(systemTheme);
       
       // Show notification on first load when auto-detecting
       if (isFirstLoad) {
@@ -53,6 +56,7 @@ export function ThemeProvider({
     }
 
     root.classList.add(theme);
+    setCurrentTheme(theme);
     setIsFirstLoad(false);
   }, [theme, isFirstLoad]);
 
@@ -81,6 +85,7 @@ export function ThemeProvider({
 
   const value = {
     theme,
+    currentTheme,
     setTheme: (newTheme: Theme) => {
       localStorage.setItem(storageKey, newTheme);
       setTheme(newTheme);
