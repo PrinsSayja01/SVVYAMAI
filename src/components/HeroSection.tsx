@@ -1,79 +1,76 @@
-import React, { useState, useEffect } from "react";
+"use client";
+
+import React, { useRef, useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { 
-  Brain, 
-  Sparkles, 
-  ArrowRight, 
-  Users, 
-  Clock, 
-  ChevronDown 
-} from "lucide-react";
-import { lazy, Suspense } from "react";
+import { Sparkles, Brain, ArrowRight, ChevronDown } from "lucide-react";
 
-// Lazy-loaded 3D Spline Viewer
-const SplineViewer = lazy(() => Promise.resolve({
-  default: () => (
-    <iframe
-      src="https://my.spline.design/genkubgreetingrobot-DwrKsTH7sYeMFIfRCIKDwinY/"
-      frameBorder="0"
-      className="absolute inset-0 w-full h-full object-cover pointer-events-none"
-      loading="lazy"
-      title="3D AI Greeting Robot"
-    />
-  )
-}));
+// Define types (optional but good practice)
+interface Company {
+  name: string;
+}
 
-// Trusted Companies
-const trustedCompanies = ["TechCorp", "GrowthCo", "ScaleUp", "InnovateNow", "FutureLabs"];
+const trustedCompanies: Company[] = [
+  { name: "TechCorp" },
+  { name: "GrowthCo" },
+  { name: "ScaleUp" },
+  { name: "InnovateNow" },
+];
 
-export default function HeroSection() {
-  const [currentCompany, setCurrentCompany] = useState(0);
+// Replace with your hosted video URL
+const VIDEO_URL = "/videos/ai-brain-animation.mp4"; // Place in public/videos/
 
-  // Auto-rotate companies
+export default function HeroWithBrainVideo() {
+  const videoRef = useRef<HTMLVideoElement | null>(null);
+  const [isLoaded, setIsLoaded] = useState<boolean>(false);
+
+  // Auto-play when video enters viewport
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentCompany((prev) => (prev + 1) % trustedCompanies.length);
-    }, 2500);
-    return () => clearInterval(interval);
-  }, []);
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !isLoaded) {
+          const video = videoRef.current;
+          if (video) {
+            video
+              .play()
+              .catch((err) =>
+                console.warn("Video autoplay was prevented:", err)
+              );
+            setIsLoaded(true);
+          }
+        }
+      },
+      { threshold: 0.2 }
+    );
+
+    const currentVideo = videoRef.current;
+    if (currentVideo) observer.observe(currentVideo);
+
+    return () => {
+      if (currentVideo) observer.unobserve(currentVideo);
+    };
+  }, [isLoaded]);
 
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden px-6"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black"
     >
-      {/* 3D Background with Suspense */}
-      <div className="absolute inset-0 z-0">
-        <Suspense
-          fallback={
-            <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-primary/20 to-black animate-pulse" />
-          }
-        >
-          <SplineViewer />
-        </Suspense>
-      </div>
+      {/* Background Gradient */}
+      <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-black z-0" />
 
       {/* Subtle Particle Overlay */}
-      <div className="absolute inset-0 z-10 opacity-30">
-        <div className="particle-system h-full w-full" />
+      <div className="absolute inset-0 opacity-20 z-10">
+        <div className="particle-system w-full h-full" />
       </div>
 
-      {/* Dark Overlay for Text Readability */}
-      <div className="absolute inset-0 bg-black/50 backdrop-blur-sm z-10"></div>
-
       {/* Main Content */}
-      <motion.div
-        className="max-w-7xl mx-auto z-20 relative text-center lg:text-left px-4 lg:px-0"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1 }}
-      >
+      <div className="max-w-7xl mx-auto px-6 relative z-20">
         <div className="grid lg:grid-cols-2 gap-12 items-center min-h-screen">
           {/* Left Side: Text & CTAs */}
           <motion.div
-            className="space-y-8"
+            className="space-y-8 text-center lg:text-left"
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
@@ -86,7 +83,7 @@ export default function HeroSection() {
             >
               <Badge className="bg-gradient-to-r from-amber-400/20 to-orange-600/20 text-amber-300 border-amber-400/30 backdrop-blur-sm px-6 py-2 text-sm font-medium inline-flex items-center">
                 <Sparkles className="w-4 h-4 mr-2" />
-                Autonomous AI for Growth
+                Next-Gen Autonomous AI
               </Badge>
             </motion.div>
 
@@ -110,22 +107,22 @@ export default function HeroSection() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.9 }}
             >
-              Self-driven. Self-aware. Self-evolving. 
+              Self-driven. Self-aware. Self-evolving.
               <br />
               <span className="text-amber-400">AI that grows your business 24/7 — while you sleep.</span>
             </motion.p>
 
-            {/* Stats */}
+            {/* Stats (Optional) */}
             <motion.div
               className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-8"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 1.1 }}
+              transition={{ duration: 0.8, delay: 1.0 }}
             >
               {[
                 { value: "300%", label: "ROI Boost" },
                 { value: "24/7", label: "Lead Capture" },
-                { value: "90%", label: "Workload Reduction" }
+                { value: "90%", label: "Workload Reduction" },
               ].map((stat, i) => (
                 <div
                   key={i}
@@ -144,7 +141,7 @@ export default function HeroSection() {
               className="flex flex-col sm:flex-row gap-5 justify-center lg:justify-start mt-8"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 1.3 }}
+              transition={{ duration: 0.8, delay: 1.2 }}
             >
               <Button
                 size="lg"
@@ -168,50 +165,50 @@ export default function HeroSection() {
               className="pt-6 border-t border-white/10 mt-8"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ duration: 0.6, delay: 1.5 }}
+              transition={{ duration: 0.6, delay: 1.4 }}
             >
               <p className="text-sm text-gray-400 mb-3">Trusted by 200+ innovative companies</p>
               <div className="flex flex-wrap justify-center lg:justify-start gap-3">
-                {trustedCompanies.map((company, i) => (
+                {trustedCompanies.map((company) => (
                   <span
-                    key={company}
-                    className={`text-xs px-3 py-1.5 rounded-full border transition-all duration-500 ${
-                      i === currentCompany
-                        ? "bg-amber-500/30 border-amber-400 text-amber-200 scale-110 shadow-lg"
-                        : "bg-white/10 border-white/20 text-gray-300 scale-100"
-                    }`}
+                    key={company.name}
+                    className="text-xs px-3 py-1.5 rounded-full bg-white/10 border border-white/20 text-gray-300"
                   >
-                    {company}
+                    {company.name}
                   </span>
                 ))}
               </div>
             </motion.div>
           </motion.div>
 
-          {/* Right Side: AI Visualization */}
+          {/* Right Side: AI Brain Video */}
           <motion.div
             className="relative flex justify-center lg:justify-end"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.8 }}
           >
-            {/* Floating AI Core */}
-            <div className="relative w-64 h-64 lg:w-80 lg:h-80">
-              <div className="absolute inset-0 bg-gradient-to-br from-amber-500/40 to-orange-700/40 rounded-full blur-xl scale-75 lg:scale-90"></div>
-              <div className="relative w-full h-full bg-gradient-to-br from-amber-500/20 to-orange-700/20 backdrop-blur-sm rounded-3xl border border-amber-400/40 flex items-center justify-center">
-                <Brain className="w-20 h-20 text-amber-400 drop-shadow-2xl" />
-              </div>
-
-              {/* Orbiting Particles */}
-              <div className="absolute inset-0 rounded-full animate-spin duration-[6000ms]">
-                <div className="w-4 h-4 bg-amber-400 rounded-full absolute top-4 left-1/2 transform -translate-x-1/2"></div>
-                <div className="w-3 h-3 bg-orange-400 rounded-full absolute bottom-4 right-1/3"></div>
-                <div className="w-2 h-2 bg-yellow-300 rounded-full absolute top-1/3 left-4"></div>
-              </div>
+            <div className="relative w-full max-w-md aspect-video rounded-2xl overflow-hidden shadow-2xl border border-white/10">
+              <video
+                ref={videoRef}
+                src={VIDEO_URL}
+                muted
+                loop
+                playsInline
+                preload="metadata"
+                className="w-full h-full object-cover"
+                aria-label="Animated golden AI brain with glowing neural circuits"
+              />
+              {/* Loading Spinner */}
+              {!isLoaded && (
+                <div className="absolute inset-0 flex items-center justify-center bg-black/50">
+                  <div className="w-10 h-10 border-4 border-white/50 border-t-white rounded-full animate-spin"></div>
+                </div>
+              )}
             </div>
           </motion.div>
         </div>
-      </motion.div>
+      </div>
 
       {/* Scroll Indicator */}
       <motion.div
