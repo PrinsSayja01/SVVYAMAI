@@ -25,15 +25,15 @@ const Header = () => {
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 glass-nav transition-all duration-300">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-md border-b border-border transition-all duration-300">
       <div className="container-width section-padding">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
         <div className="flex items-center space-x-3">
           <img 
             src="/lovable-uploads/1a31cf75-6835-4315-a0aa-5c0948bac019.png" 
-            alt="Svvayam AI Logo" 
-            className="h-10 w-auto object-contain smart-hover"
+            alt="Svvyam AI Logo" 
+            className="h-10 w-auto object-contain"
           />
         </div>
 
@@ -43,7 +43,7 @@ const Header = () => {
               <a
                 key={item.label}
                 href={item.href}
-                className="text-foreground/80 hover:text-primary transition-colors duration-300 font-medium smart-hover"
+                className="text-foreground/80 hover:text-primary transition-colors duration-300 font-medium"
               >
                 {item.label}
               </a>
@@ -63,7 +63,7 @@ const Header = () => {
           {/* CTA Button and Theme Toggle */}
           <div className="hidden md:flex items-center space-x-4">
             <ThemeToggle />
-            <Button className="btn-primary interactive-glow">
+            <Button className="btn-primary">
               Activate Your AI
             </Button>
           </div>
@@ -108,7 +108,7 @@ const Header = () => {
               </div>
               <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 mt-4 pt-3 sm:pt-4 border-t border-border">
                 <ThemeToggle />
-                <Button className="btn-primary btn-responsive interactive-glow">
+                <Button className="btn-primary btn-responsive">
                   Activate Your AI
                 </Button>
               </div>

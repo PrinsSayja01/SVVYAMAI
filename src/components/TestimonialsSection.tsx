@@ -13,7 +13,7 @@ const TestimonialsSection = () => {
       company: "TechGrow Solutions",
       image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=150&h=150&fit=crop&crop=face",
       rating: 5,
-      content: "Svvayam AI transformed our business completely. We went from 5 leads per month to 150+ qualified prospects. The autonomous intelligence system saves us 20 hours per week.",
+      content: "Svvyam AI transformed our business completely. We went from 5 leads per month to 150+ qualified prospects. The autonomous intelligence system saves us 20 hours per week.",
       results: "3000% increase in leads"
     },
     {
@@ -43,7 +43,7 @@ const TestimonialsSection = () => {
       company: "GrowthCorp",
       image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face",
       rating: 5,
-      content: "Working with Svvayam AI was a game-changer. The autonomous nurturing sequences convert 35% better than our old manual process.",
+      content: "Working with Svvyam AI was a game-changer. The autonomous nurturing sequences convert 35% better than our old manual process.",
       results: "35% better conversion"
     }
   ];

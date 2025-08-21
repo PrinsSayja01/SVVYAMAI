@@ -53,14 +53,11 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
-				tech: {
-					blue: 'hsl(var(--tech-blue))',
-					gray: 'hsl(var(--slate-gray))',
-					midgray: 'hsl(var(--mid-gray))',
-				},
-				success: {
-					DEFAULT: 'hsl(var(--success))',
-					foreground: 'hsl(var(--success-foreground))'
+				agency: {
+					orange: 'hsl(var(--agency-orange))',
+					blue: 'hsl(var(--agency-blue))',
+					green: 'hsl(var(--agency-green))',
+					purple: 'hsl(var(--agency-purple))',
 				}
 			},
 			borderRadius: {
